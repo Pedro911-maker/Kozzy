@@ -3,7 +3,7 @@
 
 var gallery = document.getElementById('gallery');// creation of the variable gallery
 
-fetch('/Pedro911-maker/js/img.json') // link with the json
+fetch('./js/img.json') // link with the json
 
   .then(function (res) { //function the res to be able to link the json with
     res.json().then(function (json) {//link the json
