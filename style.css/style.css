@@ -161,12 +161,15 @@ html, body {
 
 
 .Menu{
-  /* menu sits on the right side of the header; align inside flex header */
-  margin: 0;
-  position: relative;
-  text-align: left;
+  /* center the menu horizontally in the header */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
   display: block;
   font-family: 'Anton', sans-serif;
+  z-index: 10;
 
 }
 
