@@ -311,7 +311,7 @@ header nav ul li{
     /* allow link width to adapt to text length and center vertically */
     width: auto;
     word-spacing: normal;
-    font-size: 15px;
+    font-size: 18px;
     padding: 0px 10px;
     height: 50px;
     line-height: 50px;
@@ -369,8 +369,8 @@ a.submenu{
  
   header {
     border-radius: 25px 25px 25px 25px;
-    /* increased height to accommodate multi-line menu items */
-    height: 140px;
+    /* reduced height for more compact header */
+    height: 110px;
     margin-top: 35px;
     background-color: rgba(122, 49, 158, 0.178);
     width: 100%;
