@@ -161,16 +161,11 @@ html, body {
 
 
 .Menu{
-  /* increased width so more top-level menu items are visible */
-  width: 800px;
-  margin-top: 30px;
-  float :right;
-  padding-right: 20px;
-   position:relative; /*the menu pass under the absolute element*/
-   
+  /* menu sits on the right side of the header; use margin to position inside flex header */
+  margin: 0 20px 0 0;
+  position: relative;
   text-align: left;
   display: block;
-
   font-family: 'Anton', sans-serif;
 
 }
@@ -298,12 +293,17 @@ header nav ul li{
   }
 
 .logo {
-    float: left;
-    height: 50px;
-    line-height: 50px;
-   
-    font-size :larger;
-    padding: 0px 15px;
+    /* use flex alignment instead of float so logo centers in header */
+    display: flex;
+    align-items: center;
+    height: auto;
+    padding: 0 15px;
+  }
+  .logo img{
+    /* keep logo visually balanced in the header and responsive */
+    height: 70px;
+    width: auto;
+    display: block;
   }
   a{
     display: block;
