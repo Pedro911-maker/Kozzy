@@ -217,7 +217,7 @@ nav li li{
 .wrapper {
   border-radius: 25px;
   width: 1250px;
-  margin: 10px 10px 10px 123px ;
+  margin: 10px auto;
   height : 1379px;
   box-shadow: -1px 5px 5px 10px rgba(122, 49, 158, 0.178);
 
@@ -227,7 +227,7 @@ nav li li{
 .wrapperr {
   border-radius: 25px;
   width: 1250px;
-  margin: 10px 10px 10px 123px ;
+  margin: 10px auto;
   height : 6500px;
   border : 10px;
   font-family: 'Roboto Mono', monospace;
@@ -240,7 +240,7 @@ nav li li{
 .wrapperrr {
   border-radius: 25px;
   width: 1250px;
-  margin: 10px 10px 10px 123px ;
+  margin: 10px auto;
   height : 8200px;
   border : 10px;
   font-family: 'Roboto Mono', monospace;
@@ -266,7 +266,7 @@ nav li li{
 .wrapperrrrr {
   border-radius: 25px;
   width: 1250px;
-  margin: 10px 10px 10px 123px ;
+  margin: 10px auto;
   height : 14100px;
   border : 10px;
   font-family: 'Roboto Mono', monospace;
@@ -311,7 +311,7 @@ header nav ul li{
     /* allow link width to adapt to text length and center vertically */
     width: auto;
     word-spacing: normal;
-    font-size: 40px;
+    font-size: 22px;
     padding: 0px 10px;
     height: 50px;
     line-height: 50px;
