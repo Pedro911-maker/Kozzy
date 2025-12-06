@@ -181,20 +181,22 @@ html, body {
 .BG1{
   background :url(../images/background.png);
   width: 100%;
-  
-  background-repeat: repeat; 
+  background-repeat: repeat;
+  background-position: center bottom;
   height: 100%;
 }
 .BG2{
     background : url(../images/background2.png);
     width: 100%;
     background-repeat: repeat;
+    background-position: center top;
     height: 100%;
 }
 .BG3{
   background :url(../images/background.png);
   width: 100%;
   background-repeat: repeat;
+  background-position: center top;
   height: 1379px;
 }
 
