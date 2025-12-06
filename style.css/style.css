@@ -161,17 +161,17 @@ html, body {
 
 
 .Menu{
-    width: 400px;
-    margin-top: 50px;  
-    float :right;
-    padding-right: 120px;
+  /* increased width so more top-level menu items are visible */
+  width: 800px;
+  margin-top: 50px;  
+  float :right;
+  padding-right: 120px;
    position:relative; /*the menu pass under the absolute element*/
    
-    text-align: left;
-    display: block;
+  text-align: left;
+  display: block;
 
-    font-family: 'Anton', sans-serif;
-
+  font-family: 'Anton', sans-serif;
 
 }
 
