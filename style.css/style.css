@@ -163,9 +163,9 @@ html, body {
 .Menu{
   /* increased width so more top-level menu items are visible */
   width: 800px;
-  margin-top: 50px;  
+  margin-top: 30px;
   float :right;
-  padding-right: 120px;
+  padding-right: 20px;
    position:relative; /*the menu pass under the absolute element*/
    
   text-align: left;
@@ -369,11 +369,13 @@ a.submenu{
  
   header {
     border-radius: 25px 25px 25px 25px;
-    /* reduced height for more compact header */
-    height: 110px;
+    /* adjusted height for better menu placement */
+    height: 120px;
     margin-top: 35px;
     background-color: rgba(122, 49, 158, 0.178);
     width: 100%;
+    display: flex;
+    align-items: center;
 
 
  
