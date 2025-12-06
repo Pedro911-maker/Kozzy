@@ -188,13 +188,13 @@ html, body {
 .BG2{
     background : url(../images/background2.png);
     width: 100%;
+    background-repeat: repeat;
     height: 100%;
 }
 .BG3{
   background :url(../images/background.png);
   width: 100%;
-  
-  
+  background-repeat: repeat;
   height: 1379px;
 }
 
