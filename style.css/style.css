@@ -161,8 +161,8 @@ html, body {
 
 
 .Menu{
-  /* menu sits on the right side of the header; use margin to position inside flex header */
-  margin: 0 20px 0 0;
+  /* menu sits on the right side of the header; align inside flex header */
+  margin: 0;
   position: relative;
   text-align: left;
   display: block;
@@ -374,8 +374,11 @@ a.submenu{
     margin-top: 35px;
     background-color: rgba(122, 49, 158, 0.178);
     width: 100%;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
 
 
  
