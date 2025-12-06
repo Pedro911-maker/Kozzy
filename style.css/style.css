@@ -308,9 +308,12 @@ header nav ul li{
   }
   .logo img{
     /* keep logo visually balanced in the header and responsive */
-    height: 90px;
+    height: 100px;
     width: auto;
     display: block;
+    /* lift the logo slightly to align visually with the header */
+    transform: translateY(-22px);
+    -webkit-transform: translateY(-22px);
   }
   a{
     display: block;
