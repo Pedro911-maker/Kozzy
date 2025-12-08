@@ -70,28 +70,117 @@
 
         </div>
       </header>
+<main>
+    <h1>Segmentation Sémantique – U-Net sur Images Satellite</h1>
 
-          </nav>
+    <p><strong>Résumé :</strong> 
+      Ce projet met en œuvre un modèle <strong>U-Net</strong> pour réaliser la 
+      <strong>segmentation sémantique</strong> d’images Sentinel-2. 
+      L’objectif est d’identifier automatiquement différentes classes d’occupation 
+      du sol (zones urbaines, végétation, eau) à partir de données multispectrales.
+    </p>
 
-        </div>
-      </header>
+    <p><strong>Compétences démontrées :</strong> 
+      prétraitement raster (<em>rasterio, GDAL</em>), extraction multispectrale 
+      (RGB/NIR/SWIR), création de patches d’apprentissage, entraînement d’un 
+      <strong>CNN U-Net</strong> sous <strong>PyTorch</strong>, métriques IoU/F1.
+    </p>
 
-      <main>
-        <h1>Classification Multispectrale – Sentinel-2</h1>
-        <p><strong>Résumé :</strong> Segmentation de l’occupation du sol à partir d’images Sentinel-2.</p>
-        <p><strong>Techniques :</strong> preprocessing raster, CNN (U-Net), IoU/F1.</p>
-        <p><strong>Résultats :</strong> Exemple d'accuracy et visuels (à compléter).</p>
+    <section>
+      <h2>Données</h2>
+      <ul>
+        <li><strong>Source :</strong> Sentinel-2 L2A (Copernicus)</li>
+        <li><strong>Bands utilisées :</strong> B2, B3, B4, B8 (visible & NIR), B11/B12 (SWIR)</li>
+        <li><strong>Résolution :</strong> 10–20 m</li>
+        <li><strong>Prétraitement :</strong> reprojection, normalisation, cloud masking, 
+            extraction de patches 128×128</li>
+      </ul>
+    </section>
 
-        <section>
-          <h2>Images</h2>
-          <img src="images/Best/Nébuleuse-Papillon.jpg" alt="exemple" style="max-width:100%;height:auto;border-radius:8px;">
-        </section>
+    <section>
+      <h2>Méthodologie</h2>
+      <ul>
+        <li>
+          <strong>Prétraitement :</strong> ouverture des bandes Sentinel-2 avec <em>rasterio</em>, 
+          stacking multispectral, harmonisation des résolutions, 
+          calcul d’indices (NDVI/NDWI).
+        </li>
+        <li>
+          <strong>Dataset :</strong> génération de milliers de patches multispectraux et 
+          extraction des masques d’occupation du sol (open-source / OSM / Inria).
+        </li>
+        <li>
+          <strong>Modèle :</strong> architecture <strong>U-Net</strong> avec encodeur 
+          type <em>ResNet-34</em>.
+        </li>
+        <li>
+          <strong>Entraînement :</strong> PyTorch, augmentation géospatiale 
+          (rotation, flip, brightness), fonction de perte <em>Dice + BCE</em>.
+        </li>
+        <li>
+          <strong>Évaluation :</strong> IoU par classe, F1-score, matrice de confusion.
+        </li>
+      </ul>
+    </section>
 
-        <p><a href="Earth Obs. & ML.html" class="btn">Retour à Earth Obs. & ML</a></p>
-      </main>
+    <section>
+      <h2>Résultats</h2>
+      <p>
+        Le modèle atteint une <strong>IoU moyenne de XX%</strong> sur le jeu de test.  
+        La segmentation permet de distinguer efficacement zones urbaines, végétation 
+        dense et surfaces d’eau.
+      </p>
+
+      <div class="image-grid">
+        <figure>
+          <img src="images/input_example.jpg" 
+               alt="Image satellite brute" 
+               style="max-width:100%;border-radius:8px;">
+          <figcaption>Image multispectrale d’entrée</figcaption>
+        </figure>
+
+        <figure>
+          <img src="images/output_unet.jpg" 
+               alt="Segmentation U-Net" 
+               style="max-width:100%;border-radius:8px;">
+          <figcaption>Résultat de la segmentation (U-Net)</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section>
+      <h2>Technologies utilisées</h2>
+      <ul>
+        <li><strong>Python scientifique :</strong> NumPy, Pandas, Matplotlib</li>
+        <li><strong>Traitement d’images :</strong> rasterio, GDAL</li>
+        <li><strong>Machine Learning :</strong> PyTorch, TensorFlow</li>
+        <li><strong>Analyse géospatiale :</strong> geopandas, QGIS</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Ce que ce projet démontre</h2>
+      <p>
+        Ce projet illustre ma capacité à développer un pipeline complet de 
+        <strong>vision par ordinateur appliquée à l’observation de la Terre</strong>, 
+        depuis la préparation des données brutes Sentinel-2 jusqu’à la mise en production 
+        d’un modèle de segmentation <strong>U-Net</strong>.  
+        Il met également en valeur mes compétences en <strong>traitement d’images</strong>, 
+        <strong>machine learning</strong> et <strong>exploitation de données multispectrales</strong>, 
+        telles que décrites dans mon CV.
+      </p>
+    </section>
+
+    <p><a href="Earth Obs. & ML.html" class="btn">← Retour à Earth Obs. & ML</a></p>
+</main>
 
       <footer>&copy; Pierre BAUDU 2021</footer>
     </div>
   </div>
 </body>
 </html>
+          </nav>
+
+        </div>
+      </header>
+
