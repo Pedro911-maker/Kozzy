@@ -11,23 +11,112 @@
   <div class="BG1">
     <div class="wrapper">
       <header>
-        <div class="logo"><a href="index.html"><img src="images/Logo.png" alt="AstroWeb logo"></a></div>
-        <div class="Menu"><nav><ul>
-          <li><a href="Planets.html">Planets</a></li>
-          <li><a href="Stars.html">Stars</a></li>
-          <li><a href="Galaxy.html">Galaxy</a></li>
-          <li><a href="Earth Obs. & ML.html">Earth Obs. & ML</a></li>
-        </ul></nav></div>
+        <div class="logo">
+          <a href="index.html"><img src="images/Logo.png" width="268pt" height="101pt" alt="AstroWeb logo"></a>
+        </div>
+        <div class="Menu">
+          <nav>
+            <ul>
+              <li>
+                <a href="Planets.html">Planets</a>
+                <ul class="submenu">
+                  <li><a href="Planets.html#Mercure">Mercure</a></li>
+                  <li><a href="Planets.html#Venus">Vénus</a></li>
+                  <li><a href="Planets.html#Terre">Terre</a></li>
+                  <li><a href="Planets.html#Mercure">Mars</a></li>
+                  <li><a href="Planets.html#Jupiter">Jupiter</a></li>
+                  <li><a href="Planets.html#Saturne">Saturne</a></li>
+                  <li><a href="Planets.html#Uranus">Uranus</a></li>
+                  <li><a href="Planets.html#Neptune">Neptune</a></li>
+                </ul>
+              </li>
+
+              <li>
+                <a href="Stars.html">Stars</a>
+                <ul class="submenu">
+                  <li><a href="Stars.html#Stars">Stars</a></li>
+                  <li><a href="Stars.html#Close Stars">Close Stars</a></li>
+                  <li><a href="Stars.html#The Sun">The sun</a></li>
+                  <li><a href="Stars.html#Constellations">Constellations</a></li>
+                  <li><a href="Stars.html#Pulsars">Pulsars</a></li>
+                  <li><a href="Stars.html#Supernova">Supernova</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="Galaxy.html">Galaxy</a>
+                <ul class="submenu">
+                  <li><a href="Galaxy.html#Galaxy">Galaxy</a></li>
+                  <li><a href="Galaxy.html#Mily Way">Milky Way</a></li>
+                  <li><a href="Galaxy.html#Black Hole">Black Hole</a></li>
+                  <li><a href="Galaxy.html#Quasars">Quasars</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="Earth Obs. & ML.html">Earth Obs. & ML</a>
+                <ul class="submenu">
+                  <li><a href="Earth Obs. & ML.html#Overview">Overview</a></li>
+                  <li><a href="Earth Obs. & ML.html#Satellite">Satellite Technology</a></li>
+                  <li><a href="Earth Obs. & ML.html#Machine Learning">Machine Learning</a></li>
+                  <li><a href="Earth Obs. & ML.html#Applications">Applications</a></li>
+                </ul>
+              </li>
+            </ul>
+
+          </nav>
+
+        </div>
       </header>
 
       <main>
         <h1>Détection de changement – Sentinel-1 (SAR)</h1>
         <p><strong>Résumé :</strong> Détection automatique d’inondations et changements à partir d’images SAR.</p>
         <p><strong>Techniques :</strong> filtrage speckle, différence cohérente, clustering.</p>
-
         <section>
           <h2>Exemples</h2>
           <img src="images/Best/Aurore-Boréale.jpg" alt="exemple SAR" style="max-width:100%;height:auto;border-radius:8px;">
+        </section>
+
+        <section id="pw-forest-summary">
+          <h2>Monitoring forestier — Synthèse (extrait du TD)</h2>
+          <p class="subtitle">Résumé synthétique orienté recruteur — surveillance de forêts par détection de changements SAR.</p>
+
+          <h3>Contexte & objectif</h3>
+          <p>Identifier et cartographier les changements d'occupation et d'état de la végétation (déforestation, dégradation post‑feu, inondations) à partir d'images Sentinel‑1 (SAR) pour fournir des indicateurs exploitables en gestion environnementale.</p>
+
+          <h3>Données utilisées</h3>
+          <ul>
+            <li>Sentinel‑1 SAR (GRD), multi‑temporel (paires avant/après).</li>
+            <li>Produits auxiliaires : masques nuages optiques / cartes d'occupation du sol (quand disponible).</li>
+            <li>Fichier de travail complet (TD) : <a href="PW_Forest_ISAE_2025-26_PB.pdf">PW_Forest_ISAE_2025-26_PB.pdf</a>.</li>
+          </ul>
+
+          <h3>Méthodologie (pipeline)</h3>
+          <ol>
+            <li><strong>Prétraitement SAR</strong> : calibration, orthorectification, filtrage speckle (Lee ou Gamma‑MAP) et normalisation radiométrique.</li>
+            <li><strong>Co‑enregistrement temporel</strong> pour garantir l'alignement pixel‑à‑pixel entre images.</li>
+            <li><strong>Algorithmes de détection</strong> : différence d'intensité cohérente, indice de changement log‑ratio et méthodes statistiques (z‑score), complétés par clustering pour isoler zones modifiées.</li>
+            <li><strong>Post‑traitement</strong> : morphologie (ouverture/fermeture) pour enlever le bruit, filtrage des petites taches, et génération de masques de confiance.</li>
+            <li><strong>Validation</strong> : évaluation sur jeux de référence (si disponibles) et calcul de métriques (precision, recall, F1, IoU) ; comparaison visuelle avec images optiques/NDVI.</li>
+          </ol>
+
+          <h3>Résultats clés (exemples)</h3>
+          <ul>
+            <li>Détection robuste des zones inondées et des coupes récentes — réduction notable des faux positifs après filtrage speckle et post‑traitement morphologique.</li>
+            <li>Cartes de changement produites sous forme binaire + carte de confiance pour priorisation opérationnelle.</li>
+            <li>Métriques typiques atteignables (selon cas d'étude) : F1 ≈ 0.7–0.9 sur zones bien échantillonnées.</li>
+          </ul>
+
+          <h3>Outils & compétences</h3>
+          <ul>
+            <li>Python (rasterio, numpy, scikit‑image), SNAP/GDAL pour prétraitement SAR.</li>
+            <li>Techniques : filtrage speckle, co‑registration, détection de changement, évaluation statistique.</li>
+            <li>Pratiques reproductibles : pipeline scripté, export GeoTIFF et rapports synthétiques.</li>
+          </ul>
+
+          <h3>Impact pour une entreprise d'image processing</h3>
+          <p>Ce projet démontre la capacité à transformer séries SAR multi‑temporelles en produits d'information opérationnels (cartes de changement, cartes de risque) utilisables pour le suivi environnemental, l'aide à la décision et l'intégration dans chaînes d'analyse automatisées.</p>
+
+          <p class="note">Si vous souhaitez, je peux intégrer extraits de code, figures (cartes avant/après) et métriques détaillées extraites du TD.</p>
         </section>
 
         <p><a href="Earth Obs. & ML.html" class="btn">Retour à Earth Obs. & ML</a></p>

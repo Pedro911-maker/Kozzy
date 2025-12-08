@@ -654,6 +654,9 @@ p a {
   padding: 14px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.5);
   text-align: left;
+  position: relative;
+  overflow: hidden;
+  min-height: 320px;
 }
 .project-card img {
   width: 100%;
@@ -664,6 +667,7 @@ p a {
   margin-bottom: 8px;
 }
 .project-card h3 { margin: 8px 0 6px 0; color: whitesmoke; }
+.project-card p { text-align: left; color: #e6e6e6; font-size: 16px; line-height: 1.45; }
 .btn {
   display: inline-block;
   margin-top: 10px;
