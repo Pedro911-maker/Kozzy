@@ -147,233 +147,199 @@
 }
 
 
-html, body {
-    
- font-family: 'Roboto Mono', monospace;
-    background-color:  black;
-  
-    
-    
-    
-
-    
+/* ===== RESET / BASE ===== */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: 'Roboto Mono', monospace;
+  color: white;
+  background: transparent; /* important (on met le BG sur ::before) */
+  min-height: 100vh;
 }
 
+/* ✅ Background fixe robuste (parallax) */
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  background: url("../images/background.png") center top / cover no-repeat;
+  z-index: -1;
+  transform: translateZ(0);
+}
+
+/* ===== LAYOUT BACKGROUND SECTIONS ===== */
+.BG1, .BG2, .BG3{
+  width: 100%;
+  min-height: 100vh; /* au moins écran */
+  padding-bottom: 1px; /* évite certains “collapses” */
+}
+
+/* ===== WRAPPERS (plus de height fixe !) ===== */
+.wrapper,
+.wrapperr,
+.wrapperrr,
+.wrapperrrr,
+.wrapperrrrr{
+  border-radius: 25px;
+  width: min(1250px, calc(100% - 40px));
+  margin: 10px auto;
+  height: auto;
+}
+
+/* Si tu veux absolument un fond dans la partie longue : garde ça */
+.wrapperr{
+  background-color: black;
+  box-shadow: 2px 0px 5px 4px rgba(122, 49, 158, 0.178);
+}
+
+/* wrapper “haut” (menu + intro) */
+.wrapper{
+  box-shadow: -1px 5px 5px 10px rgba(122, 49, 158, 0.178);
+}
+
+/* ===== HEADER + MENU ===== */
+header {
+  border-radius: 25px;
+  height: 120px;
+  margin-top: 35px;
+  background-color: rgba(122, 49, 158, 0.178);
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+}
+.logo img{
+  height: 100px;
+  width: auto;
+  display: block;
+  transform: translateY(-22px);
+}
 
 .Menu{
-  /* center the menu horizontally in the header */
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  display: block;
   font-family: 'Anton', sans-serif;
   z-index: 10;
-
 }
 
-.Solar-System{
-  
+/* Nav clean */
+nav ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+nav li{
+  display: inline-block;
+  position: relative;
+  margin: 0 18px;
+}
+
+a{
+  display: block;
   text-align: center;
-
+  width: auto;
+  font-size: 24px;
+  padding: 0 12px;
+  height: 56px;
+  line-height: 56px;
+  color: white;
+  text-decoration: none;
 }
-.BG1{
-  background :url(../images/background.png);
-  width: 100%;
-  background-repeat: repeat;
-  background-position: center bottom;
-  height: 100%;
-}
-.BG2{
-    background : url(../images/background2.png);
-    width: 100%;
-    background-repeat: repeat;
-    background-position: center top;
-    height: 100%;
-}
-.BG3{
-  background :url(../images/background.png);
-  width: 100%;
-  background-repeat: repeat;
-  background-position: center top;
-  height: 1379px;
+a:hover{
+  color: rgb(70,130,180);
+  text-decoration: underline overline;
 }
 
-
+/* submenu */
 .submenu{
-  
-  display : none;
-  
-  position:  absolute; /*the submenu is diplayed on a relative element*/
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
 }
-
+nav li:hover > .submenu{ display: block; }
 
 nav li li{
+  display: block;
+  margin: 0;
   background-color: rgba(122, 49, 158, 0.178);
 }
 
-
-.wrapper {
-  border-radius: 25px;
-  width: 1250px;
-  margin: 10px auto;
-  height : 1379px;
-  box-shadow: -1px 5px 5px 10px rgba(122, 49, 158, 0.178);
-
-  
-
+/* ===== TYPO ===== */
+h1 {
+  padding-top: 50px;
+  padding-left: 152px;
+  width: 1000px;
+  color: whitesmoke;
+  text-align: center;
 }
-.wrapperr {
-  border-radius: 25px;
-  width: 1250px;
-  margin: 10px auto;
-  height : 6500px;
-  border : 10px;
-  font-family: 'Roboto Mono', monospace;
-  box-shadow: 2px 0px 5px 4px rgba(122, 49, 158, 0.178);
+h1.Intro{ font-size: 40px; }
 
-  background-color: 	black;
-  
-
-}
-.wrapperrr {
-  border-radius: 25px;
-  width: 1250px;
-  margin: 10px auto;
-  height : 8200px;
-  border : 10px;
-  font-family: 'Roboto Mono', monospace;
-  box-shadow: 2px 0px 5px 4px rgba(122, 49, 158, 0.178);
-
-  background-color: 	black;
-  
-
-}
-.wrapperrrr {
-  border-radius: 25px;
-  width: 1250px;
-  margin: 10px auto;
-  height : 3300px;
-  border : 10px;
-  font-family: 'Roboto Mono', monospace;
-  box-shadow: 2px 0px 5px 4px rgba(122, 49, 158, 0.178); /*modification of the border of the wrapper*/
-
-  background-color: 	black;
-  
-
-}
-.wrapperrrrr {
-  border-radius: 25px;
-  width: 1250px;
-  margin: 10px auto;
-  height : 14100px;
-  border : 10px;
-  font-family: 'Roboto Mono', monospace;
-  box-shadow: 2px 0px 5px 4px rgba(122, 49, 158, 0.178);
-
-  background-color: 	black;
-  
-
+h3{
+  color: rgb(0,0,0);
+  text-align: left;
 }
 
-
-nav li {
-    display: inline-block;
-    float: none;
-    text-align: center;
-    margin: 0 18px;
-  }
-header nav ul {
-   
-    padding: 0px;
-    margin: 0px;
-  }
-header nav ul li{
-    position: relative;/*the whole menue is relative*/
-    font-size:large;
-
-  }
-  div nav ul li:hover > ul {/*when you pass your cursor on a ul element the block are displayed*/
-    display : block;
-  }
-
-.logo {
-    /* use flex alignment instead of float so logo centers in header */
-    display: flex;
-    align-items: center;
-    height: auto;
-    padding: 0 15px;
-    margin-top: 0;
-  }
-  .logo img{
-    /* keep logo visually balanced in the header and responsive */
-    height: 100px;
-    width: auto;
-    display: block;
-    /* lift the logo slightly to align visually with the header */
-    transform: translateY(-22px);
-    -webkit-transform: translateY(-22px);
-  }
-  a{
-    display: block;
-    text-align:center;
-    /* allow link width to adapt to text length and center vertically */
-    width: auto;
-    word-spacing: normal;
-    font-size: 24px;
-    padding: 0px 12px;
-    height: 56px;
-    line-height: 56px;
-    color: white;
-  }
-  a:hover{ /*when you pass your cursors on the menu there is modification*/
-    color: rgb(70,130,180);
-    text-decoration: underline overline;
-  }
-a.submenu{
-
-
-
-    
-  display: block;
-  text-align:center;
-  width : 100px;
-  word-spacing :normal;
-  padding: 0px 15px;
-  height: 50px;
-  
-  line-height: 50px;
+h4{
+  padding-left: 117px;
+  width: 1100px;
+  text-align: center;
+  font-size: 24px;
+  line-height: 40px;
   color: white;
+}
 
+h5{
+  padding-top: 30px;
+  padding-left: 102px;
+  width: 1100px;
+  text-align: center;
+  font-size: 24px;
+  line-height: 70px;
+  color: white;
+}
 
-  }
-  b{
-    
-    text-align:center;
-    width : 100px;
-    word-spacing :normal;
-    font-size:large;
-    padding: 0px 15px;
-    height: 50px;
-    
-    line-height: 30px;
-    color: white;
-    text-decoration: underline transparent;
+i{ color: whitesmoke; padding-left: 20px; }
+img{ vertical-align: middle; }
 
-  }
- 
-  footer {
-      height : 50px;
-      line-height:50px;
-      font-family :'Times New Roman', Times, serif;
-      color :white;
-      text-align: center;
-      
-      
+.source{ font-size: small; }
 
-  }
+/* ===== SWIPER ===== */
+.swiper-container{
+  width: 100%;
+  max-width: 1250px;  /* ✅ évite débordement horizontal */
+  height: 700px;
+  margin: 0 auto;
+}
 
+.swiper-slide,
+.swiper-slide1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  height: 50px;
+  line-height: 50px;
+  font-family: 'Times New Roman', Times, serif;
+  color: white;
+  text-align: center;
+}
  
   
  
@@ -409,13 +375,14 @@ a.submenu{
 h2{
   color: whitesmoke;
   text-align:center;
-  width : 300px;
+  width : 650px;
   line-height: 40px;
-  padding-left:502px;
+  padding-left:300px;
+  height : 80px;
 }
 
 h3{
-  color: whitesmoke;
+  color: rgb(0, 0, 0);
   text-align :left;
   
 
@@ -679,10 +646,305 @@ p a {
 }
 .skills { margin-top: 26px; text-align: left; }
 .skills ul { margin-left: 18px; color: #ddd; }
+/* Mise en page spécifique à la page projet 2 */
 
+.project-page {
+  padding: 40px 40px 60px;
+}
 
+/* On override les valeurs globales de h1 pour cette page */
+.project-page h1 {
+  padding-top: 20px;
+  padding-left: 0;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 10px auto;
+  text-align: left;
+  font-size: 32px;
+}
 
+.project-page .subtitle {
+  max-width: 1100px;
+  margin: 0 auto 25px auto;
+  text-align: left;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
 
+/* Encadrés de section */
+.section-card {
+  max-width: 1100px;
+  margin: 18px auto;
+  padding: 20px 24px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+/* Titres à l’intérieur des encadrés */
+.section-card h2 {
+  padding-left: 0;
+  width: 100%;
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.section-card p,
+.section-card ul,
+.section-card ol {
+  width: 100%;
+  padding-left: 0;
+  text-align: left;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+/* Listes plus lisibles */
+.section-card ul,
+.section-card ol {
+  margin-left: 18px;
+}
+
+/* Grille d’images avant/après */
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.image-grid figure {
+  flex: 1 1 260px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.image-grid img {
+  width: 100%;
+  border-radius: 6px;
+  display: block;
+}
+
+.image-grid figcaption {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #ddd;
+}
+
+/* Lien de retour centré mais discret */
+.back-link {
+  max-width: 1100px;
+  margin: 24px auto 0 auto;
+  text-align: right;
+}
+
+/* Forcer le texte en blanc sur la page projet 2 */
+
+.project-page {
+  color: #ffffff;
+}
+
+.project-page h1,
+.project-page h2,
+.project-page h3,
+.project-page h4,
+.project-page h5,
+.project-page p,
+.project-page ul,
+.project-page ol,
+.project-page li,
+.project-page i,
+.project-page .subtitle {
+  color: #ffffff !important;
+}
+/* ====== PAGE PROJET 2 : MONITORING FORESTIER ====== */
+
+.project-page {
+  padding: 32px 40px 60px;
+  color: #ffffff;              /* texte blanc par défaut */
+}
+
+.project-page h1,
+.project-page h2,
+.project-page h3,
+.project-page h4,
+.project-page h5,
+.project-page p,
+.project-page ul,
+.project-page ol,
+.project-page li,
+.project-page i,
+.project-page .subtitle {
+  color: #ffffff !important;
+}
+
+/* Cards générales */
+.section-card {
+  max-width: 1100px;
+  margin: 18px auto;
+  padding: 18px 22px;
+  background: rgba(0, 0, 0, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+}
+
+/* Card de titre plus visible */
+.section-card--highlight {
+  padding: 24px 26px;
+  background: transparent;                 /* plus de bleu */
+  border-width: 2px;
+  border-color: rgba(255, 255, 255, 0.25); /* léger cadre optionnel */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6); /* ombre douce pour la lisibilité */
+}
+
+.section-card--highlight h1 {
+  padding-left: 0;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 8px auto;
+  text-align: left;
+  font-size: 32px;
+}
+
+.section-card--highlight .subtitle {
+  max-width: 1100px;
+  margin: 8px auto 0 auto;
+  text-align: left;
+  font-size: 18px;
+}
+
+/* Titres des autres cards */
+.section-card h2 {
+  padding-left: 0;
+  width: 100%;
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+/* Texte dans les cards */
+.section-card p,
+.section-card ul,
+.section-card ol {
+  width: 100%;
+  padding-left: 0;
+  text-align: left;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+/* Listes légèrement décalées */
+.section-card ul,
+.section-card ol {
+  margin-left: 18px;
+}
+
+/* Grilles d'images (avant/après, Overland, etc.) */
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.image-grid figure {
+  flex: 1 1 260px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.image-grid img {
+  width: 100%;
+  border-radius: 6px;
+  display: block;
+}
+
+.image-grid figcaption {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #dddddd;
+}
+
+/* Grille du header un peu compacte */
+.hero-grid figure {
+  flex: 1 1 200px;
+}
+
+/* Lien de retour aligné à droite */
+.back-link {
+  max-width: 1100px;
+  margin: 24px auto 0 auto;
+  text-align: right;
+}
+html, body { height: 100%; margin: 0; }
+body{
+  background: url("../images/background.png") center top / cover no-repeat fixed;
+  background-color: black;
+}
+/* Les wrappers prennent la hauteur de ce qu'ils contiennent */
+.wrapper,
+.wrapperr,
+.wrapperrr,
+.wrapperrrr,
+.wrapperrrrr {
+  height: auto;        /* on supprime les 1379px / 6500px / 14100px, etc. */
+}
+.titanic-form {
+  margin-top: 10px;
+  width: 400px ;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.form-field {
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field label {
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: #ffffff;
+}
+
+.form-field input,
+.form-field select {
+  height: 32px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+}
+
+.form-field input::placeholder {
+  color: #cccccc;
+  font-size: 12px;
+}
+
+.prediction-result {
+  margin-top: 14px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 14px;
+}
   
 
 

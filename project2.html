@@ -1,257 +1,261 @@
-<main>
-  <h1>Monitoring forestier – Détection de déforestation par imagerie SPOT &amp; Landsat</h1>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projet 1 — Classification Multispectrale</title>
+  <link rel="stylesheet" type="text/css" href="style.css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,200&display=swap" rel="stylesheet"
+        type="text/css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" type="text/css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" type="text/css">
+    <meta name="viewport" content="width=device-width" />
+  <script defer src="js/JavaScript.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Mono:ital,wght@1,200&display=swap"
+    rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="BG1">
+        <div class="wrapper">
 
-  <p class="subtitle">
-    Travail pratique réalisé dans le cadre du module <strong>APS303 – Applications &amp; Services, Agriculture &amp; Forêt</strong> 
-    (ISAE-SUPAERO / Airbus). L’objectif est de produire une carte de référence (Basemap) des classes d’occupation du sol 
-    puis de détecter automatiquement la déforestation sur des images plus récentes.
+      
+
+        <header>
+        <div class="logo">
+          <a href="index.html"><img src="images/Logo.png" width="268pt" height="101pt"></img></a>
+        </div>
+        <div class="Menu">
+          <nav>
+            <ul>
+              <li>
+                <a href="Planets.html">Planets</a>
+                <ul class="submenu">
+                  <li><a href="Planets.html#Mercure">Mercure</a></li>
+                  <li><a href="Planets.html#Venus">Vénus</a></li>
+                  <li><a href="Planets.html#Terre">Terre</a></li>
+                  <li><a href="Planets.html#Mercure">Mars</a></li>
+                  <li><a href="Planets.html#Jupiter">Jupiter</a></li>
+                  <li><a href="Planets.html#Saturne">Saturne</a></li>
+                  <li><a href="Planets.html#Uranus">Uranus</a></li>
+                  <li><a href="Planets.html#Neptune">Neptune</a></li>
+                </ul>
+              </li>
+
+              <li>
+                <a href="Stars.html">Stars</a>
+                <ul class="submenu">
+                  <li><a href="Stars.html#Stars">Stars</a></li>
+                  <li><a href="Stars.html#Close Stars">Close Stars</a></li>
+                  <li><a href="Stars.html#The Sun">The sun</a></li>
+                  <li><a href="Stars.html#Constellations">Constellations</a></li>
+                  <li><a href="Stars.html#Pulsars">Pulsars</a></li>
+                  <li><a href="Stars.html#Supernova">Supernova</a></li>
+
+                </ul>
+              </li>
+              <li>
+                <a href="Galaxy.html">Galaxy</a>
+                <ul class="submenu">
+                  <li><a href="Galaxy.html#Galaxy">Galaxy</a></li>
+                  <li><a href="Galaxy.html#Mily Way">Milky Way</a></li>
+                  <li><a href="Galaxy.html#Black Hole">Black Hole</a></li>
+                  <li><a href="Galaxy.html#Quasars">Quasars</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="Earth Obs. & ML.html">Earth Obs. & ML</a>
+                <ul class="submenu">
+                  <li><a href="Earth Obs. & ML.html#Overview">Overview</a></li>
+                  <li><a href="Earth Obs. & ML.html#Satellite">Satellite Technology</a></li>
+                  <li><a href="Earth Obs. & ML.html#Machine Learning">Machine Learning</a></li>
+                  <li><a href="Earth Obs. & ML.html#Applications">Applications</a></li>
+                </ul>
+              </li>
+            </ul>
+
+          </nav>
+
+        </div>
+      </header>
+  
+  <main class="project-page">
+
+  <!-- CARD TITRE (plus grosse) -->
+  <section class="section-card section-card--highlight">
+    <h1>Monitoring forestier — Détection de changement SAR</h1>
+    <p class="subtitle">
+      
+    </p>
+
+    <!-- Aperçu visuel : AOI + image brute + Overland -->
+    <section class="section-card" id="exemple-deforestation">
+  <h2>Exemple de discrimination d'un élément</h2>
+  <p>
+    Avant de rentrer de mon cas d'application, voici un exemple concret de l'utilisation de notre logiciel à SUPAERO, l’outil Overland.
+    
   </p>
 
-  <!-- 0. Jeu de données & contexte -->
-  <section id="contexte">
-    <h2>0. Jeu de données &amp; objectif</h2>
-    <p>
-      Le cas d’étude repose sur le jeu de données <strong>WP_FOREST</strong>, constitué de deux images 
-      <strong>SPOT-7</strong> (janvier 2016 et juin 2016) et d’une image <strong>Landsat-8</strong> (mai 2016), 
-      complétées par des limites de plantations de palmiers à huile et un shapefile de l’<em>Area of Interest</em> (AOI).
-      La démarche consiste à :
-    </p>
-    <ul>
-      <li>Cartographier l’occupation du sol de référence (<strong>Basemap</strong>) à partir de SPOT-7 (2016-01-21).</li>
-      <li>Construire, sur cette base, un masque des zones forestières.</li>
-      <li>Détecter les changements &amp; pertes de couvert forestier sur les images de monitoring (SPOT-7 et Landsat-8 2016).</li>
-    </ul>
+  <div class="image-grid">
+    <figure>
+      <img src="images/Forest Detection.png" 
+           alt="Interface Forest Detection montrant la déforestation">
+      <figcaption>
+        Discrimination de la forêt grâce à des indicateurs biophysiques, en commençant par le NDVI pour la végetation puis le canopy shadow factor pour déterminer les zones denses et donc la forêt.
+      </figcaption>
+    </figure>
+  </div>
   </section>
 
-  <!-- 1. Photo-interprétation + avant/après -->
-  <section id="photo-interpretation">
-    <h2>1. Photo-interprétation des images optiques</h2>
 
-    <div class="image-grid">
-      <figure>
-        <!-- à adapter avec le bon chemin de fichier -->
-        <img src="images/forest/SPOT7_20160121_basemap.png" 
-             alt="Image SPOT-7 janvier 2016 - Basemap" 
-             style="max-width:100%;border-radius:8px;">
-        <figcaption>SPOT-7 – 21/01/2016 – Image de référence (Basemap).</figcaption>
-      </figure>
-
-      <figure>
-        <!-- à adapter avec le bon chemin de fichier -->
-        <img src="images/forest/SPOT7_20160611_monitoring.png" 
-             alt="Image SPOT-7 juin 2016 - Monitoring" 
-             style="max-width:100%;border-radius:8px;">
-        <figcaption>SPOT-7 – 11/06/2016 – Image de monitoring (après).</figcaption>
-      </figure>
-    </div>
-
-    <h3>1.1 Paysages identifiables dans l’AOI</h3>
-    <p>
-      En composition couleur naturelle (Red=R, Green=G, Blue=B), la photo-interprétation permet déjà de distinguer les 
-      grandes familles de paysages : <strong>forêt dense</strong>, <strong>plantations industrielles</strong>, 
-      <strong>zones bâties</strong>, <strong>cours d’eau</strong>, <strong>sols nus</strong> ou encore 
-      <strong>zones nuageuses</strong>. À une seule bande, cette discrimination reste toutefois limitée : certaines classes 
-      (plantations vs. forêts secondaires, cultures basses vs. sols nus) présentent des signatures spectrales proches et 
-      sont difficiles à séparer visuellement.
-    </p>
-
-    <h3>1.2 Apport des compositions en fausses couleurs</h3>
-    <p>
-      L’utilisation de compositions colorées SPOT/Landsat basées sur le <strong>proche infrarouge (NIR)</strong> et le 
-      <strong>SWIR</strong> améliore fortement l’interprétation :
-    </p>
-    <ul>
-      <li>
-        La composition <strong>CC2 (Red = NIR, Green = Red, Blue = Green)</strong> renforce la végétation et fait ressortir 
-        les <strong>rivières</strong> par contraste, plus clairement que dans la simple RGB.
-      </li>
-      <li>
-        La composition <strong>CC3 (Red = SWIR, Green = NIR, Blue = Red)</strong> aide à discerner les 
-        <strong>ombres de nuages</strong> et les zones humides.
-      </li>
-      <li>
-        La composition <strong>CC4 (Red = NIR, Green = SWIR, Blue = Blue)</strong> met particulièrement bien en évidence 
-        les <strong>sols nus et surfaces déboisées</strong>.
-      </li>
-    </ul>
-    <p>
-      Ces fausses couleurs facilitent donc l’identification des structures linéaires (routes, lisières), des surfaces en 
-      eau et des perturbations de couvert végétal.
-    </p>
-
-    <h3>1.3 Résolution spatiale &amp; distinction forêt / plantations</h3>
-    <p>
-      À la résolution <strong>30 m</strong> de Landsat-8, distinguer finement <strong>forêts naturelles</strong> et 
-      <strong>plantations de palmiers à huile</strong> reste difficile : les motifs spatiaux sont partiellement lissés et 
-      les différences se limitent à des variations de texture et de structure de couronnes.  
-      À <strong>1,5 m</strong> avec SPOT-7, on commence à percevoir la structure régulière des plantations 
-      (alignements, maillage régulier), mais la séparation automatique des classes requiert tout de même une analyse 
-      spectrale et biophysique complémentaire.
-    </p>
-
-    <h3>1.4 Nomenclature retenue pour la Basemap</h3>
-    <p>
-      Sur la base de cette analyse visuelle, la Basemap est structurée autour des classes d’occupation suivantes :
-    </p>
-    <ul>
-      <li>Forêt (dense / secondaire)</li>
-      <li>Plantations (palmiers à huile, autres plantations arborées)</li>
-      <li>Zones bâties / infrastructures (settlements)</li>
-      <li>Routes &amp; surfaces artificialisées</li>
-      <li>Sols nus / terres dégradées</li>
-      <li>Croplands / cultures basses</li>
-      <li>Eau de surface (rivières, lacs, océan, mangroves)</li>
-      <li>Nuages &amp; ombres de nuages</li>
-    </ul>
-  </section>
-
-  <!-- 2. Biophysical maps -->
-  <section id="biophysical">
-    <h2>2. Analyse des paramètres biophysiques (Overland)</h2>
-
-    <p>
-      Les cartes biophysiques générées dans <strong>Overland</strong> (Leaf Chlorophyll Content, Canopy Shadow Factor, 
-      Water Fraction, Fsoil, Cloud Reflectance, etc.) permettent d’affiner la séparation entre classes qui sont 
-      spectrales proches mais <strong>biophysiquement distinctes</strong>. 
-    </p>
-
-    <h3>2.1 Paramètres discriminants par type de paysage</h3>
-    <p>
-      Les combinaisons de paramètres les plus pertinentes pour discriminer les classes de la Basemap sont les suivantes :
-    </p>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Paysage</th>
-          <th>Paramètres biophysiques principaux</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Forêt</td>
-          <td>
-            <strong>Canopy Shadow Factor (CSF)</strong> élevé + <strong>Leaf Chlorophyll Content (LCC)</strong> élevé : 
-            signature de couvert fermé, feuillu, avec canopée dense.
-          </td>
-        </tr>
-        <tr>
-          <td>Plantations</td>
-          <td>
-            CSF élevé mais plus homogène, parfois associé à une géométrie plus régulière ; LCC élevé, 
-            texture plus “organisée” qu’en forêt naturelle.
-          </td>
-        </tr>
-        <tr>
-          <td>Routes &amp; surfaces artificielles</td>
-          <td>
-            <strong>Fsoil</strong> élevé, <strong>NDIF</strong> (indice de fraction) indiquant une faible contribution de végétation.
-          </td>
-        </tr>
-        <tr>
-          <td>Zones urbaines / settlements</td>
-          <td>
-            Mélange de surfaces minérales (Fsoil) et de végétation ornementale ; LCC modéré, texture fortement hétérogène.
-          </td>
-        </tr>
-        <tr>
-          <td>Eau (rivières, lacs, mangroves ouvertes)</td>
-          <td>
-            <strong>Water Fraction</strong> élevée, très faible LCC, réponse spécifique dans le NIR/SWIR.
-          </td>
-        </tr>
-        <tr>
-          <td>Sols nus</td>
-          <td>
-            <strong>Fsoil</strong> élevé, LCC quasi nul, Water Fraction faible.
-          </td>
-        </tr>
-        <tr>
-          <td>Nuages</td>
-          <td>
-            <strong>Cloud Reflectance</strong> très élevée, signature spectrale distincte du sol sous-jacent.
-          </td>
-        </tr>
-        <tr>
-          <td>Ombres de nuages</td>
-          <td>
-            <strong>Cloud cast shadows</strong> élevées, luminance globale très faible, à distinguer des plans d’eau par le contexte spatial.
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <p>
-      Pour la <strong>forêt</strong>, l’association <strong>LCC élevé</strong> + <strong>CSF élevé</strong> s’avère 
-      particulièrement efficace : le LCC indique la présence de végétation active, tandis que le CSF capture la 
-      structure de canopée (ombrage, densité verticale). Les routes, sols nus et zones urbaines sont au contraire 
-      caractérisées par un Fsoil dominant et une faible contribution chlorophyllienne.
-    </p>
-  </section>
-
-  <!-- 3. Classification & change detection -->
-  <section id="classification">
-    <h2>3. Classification Overland &amp; détection de changement</h2>
-
-    <div class="image-grid">
-      <figure>
-        <!-- à adapter -->
-        <img src="images/forest/basemap_classification.png" 
-             alt="Basemap classifiée - SPOT7 2016" 
-             style="max-width:100%;border-radius:8px;">
-        <figcaption>Basemap d’occupation du sol dérivée de SPOT-7 (janvier 2016).</figcaption>
-      </figure>
-
-      <figure>
-        <!-- à adapter -->
-        <img src="images/forest/change_map_deforestation.png" 
-             alt="Carte de déforestation - changement forestier" 
-             style="max-width:100%;border-radius:8px;">
-        <figcaption>Carte de changement : forêts dégradées / déboisées entre janvier et juin 2016.</figcaption>
-      </figure>
-    </div>
-
-    <h3>3.1 Arbre de décision pour la Basemap &amp; le monitoring</h3>
-    <p>
-      La classification est implémentée dans Overland via un <strong>arbre de décision</strong> 
-      exploitant à la fois les biophysical maps et les indices dérivés. La démarche est la suivante :
-    </p>
-    <ul>
-      <li>Construction d’une <strong>Basemap</strong> pixel-based (janvier 2016) par décision tree à partir des paramètres biophysiques.</li>
-      <li>Génération d’un <strong>masque forêt</strong> en s’appuyant sur l’indicateur <strong>NDFI</strong> et le CSF.</li>
-      <li>Pour la phase de monitoring, l’arbre est contraint à travailler <strong>uniquement sur les pixels “forêt”</strong> de la Basemap.</li>
-      <li>
-        Au sein de cette classe forêt, les baisses significatives de CSF / NDFI et l’augmentation de Fsoil permettent 
-        d’identifier les <strong>zones déboisées</strong> (forêt → bare soil / plantations / settlements).
-      </li>
-    </ul>
-
-    <h3>3.2 Évaluation des résultats &amp; pistes d’amélioration</h3>
-    <p>
-      La qualité de la détection de changement est évaluée visuellement dans QGIS (plugin 
-      <em>MapSwipeTool</em>) et par estimation de la surface totale de forêt classée en “non-forêt” entre les deux dates.
-      Sur l’AOI étudiée, la surface déboisée estimée est de l’ordre de <strong>~91 hectares</strong>.  
-      Ce chiffre est cohérent avec la dynamique observée mais présente une tendance à la <strong>surestimation</strong>, 
-      principalement liée à :
-    </p>
-    <ul>
-      <li>Une sensibilité résiduelle aux <strong>nuages et ombres de nuages</strong> mal masqués.</li>
-      <li>Des seuils de CSF / NDFI parfois trop permissifs sur les lisières de forêt et les zones dégradées.</li>
-    </ul>
-    <p>
-      Des améliorations possibles incluent :
-    </p>
-    <ul>
-      <li>Un <strong>affinage des seuils</strong> sur le Canopy Shadow Factor et l’indicateur NDFI.</li>
-      <li>L’utilisation systématique de <strong>masques de nuages et d’ombres</strong> plus stricts.</li>
-      <li>
-        L’introduction d’une étape d’agrégation objet (segmentation) pour réduire le bruit pixel-à-pixel et imposer 
-        une <strong>unité cartographique minimale</strong> plus adaptée aux échelles de gestion forestière.
-      </li>
-    </ul>
-  </section>
+  <section class="section-card" id="deforestation-monitoring">
 
   <p>
+    La carte de déforestation repose sur un <strong>arbre de couches</strong> construit
+    à partir des paramètres biophysiques (Cloud Reflectance, Canopy Shadow Factor, Water Fraction, NDIF).
+    Chaque couche applique un test sur un paramètre biophysique spécifique, et en fonction de l'information que va récupérer le satellite par reflexion, pour faire ressortir le pixel correspondant en fonction du treshold déterminé.
+  </p>
+
+  <div class="image-grid">
+    <figure>
+      <img src="images/Déforestation monitoring.png" width="250" height="350" alt="Carte de déforestation (monitoring forestier)">
+      <figcaption>
+        Carte de monitoring forestier : forêts (vert), plantations, sols nus, eau,
+        nuages et ombres clairement séparés.
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/Arbre de couches.png" alt="Arbre de couches Overland pour le monitoring forestier">
+      <figcaption>
+        Arbre de couches Overland utilisé pour le monitoring de la déforestation :
+        enchaînement de tests sur les paramètres biophysiques.
+      </figcaption>
+    </figure>
+  </div>
+  </section>
+  <section class="section-card">
+    <h2>Données utilisées</h2>
+    <ul>
+      <li>Images <strong>SPOT 7</strong> deux dates.</li>
+      <li>Zone d’intérêt forestière fournie sous forme de shapefile.</li>
+    </ul>
+
+    <!-- Avant / après sur images brutes -->
+    <div class="image-grid">
+      <figure>
+        <img src="images/AOI Avant.png" alt="Sentinel-1 brut - date avant">
+        <figcaption> SPOT 7 – 20160121 (avant changement).</figcaption>
+      </figure>
+      <figure>
+        <img src="images/AOI Après.png" alt="Sentinel-1 brut - date après">
+        <figcaption> SPOT 7 -  20160611 (après changement).</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Méthodologie -->
+  <section class="section-card">
+    <h2>Méthodologie (pipeline)</h2>
+    <ol>
+
+
+    <!-- Vue Overland : carte brute vs cartes biophysiques cumulées -->
+    <div class="image-grid">
+
+        <img src="images/arbre de results.png" alt="Arbre des couches Overland pour le monitoring forestier">
+        <figcaption>Arbre des couches Overland définissant le workflow de monitoring forestier.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Résultats & interprétation -->
+  <section class="section-card">
+    <h2>Résultats &amp; interprétation</h2>
+    <p>
+      La détection met en évidence plusieurs taches rouges cohérentes de <strong>perte de couvert forestier</strong>,
+      en accord avec l’inspection visuelle des images “avant / après”.
+    </p>
+
+    <!-- Résultats visuels : carte de changement + zoom -->
+    <div class="image-grid">
+
+      <figure>
+        <img src="images/Results.png" alt="Indice de changement (log-ratio)">
+        <figcaption>Carte de log-ratio (avant / après) utilisée comme indicateur de changement, on voit ici en rouge les zones localisées déforestés</figcaption>
+      </figure>
+    </div>
+    <p>
+      Une étape de filtrage morphologique et le masquage des zones non forestières permettent de réduire significativement
+      ces artefacts et de concentrer l’analyse sur les zones à enjeu forestier.
+    </p>
+  </section>
+
+  <!-- Outils & compétences -->
+  <section class="section-card">
+  <section class="section-card">
+  <h2>Outils &amp; compétences mobilisés</h2>
+  <ul>
+    <li>
+      <strong>Télédétection optique multi-temporelle</strong> :
+      exploitation de deux images SPOT 7 pour comparer l’état de la couverture forestière avant / après.
+    </li>
+    <li>
+      <strong>Extraction d’indicateurs biophysiques</strong> :
+      calcul et interprétation du NDVI, du Canopy Shadow Factor, de la Water Fraction, du NDIF et de la Cloud Reflectance.
+    </li>
+    <li>
+      <strong>Construction d’un arbre de couches Overland</strong> :
+      enchaînement de tests et de seuils sur les paramètres biophysiques pour discriminer
+      forêt, plantations, eau, sols nus, nuages et ombres.
+    </li>
+    <li>
+      <strong>Traitement d’images et préparation des données</strong> :
+      co-enregistrement des images, découpage sur la zone d’intérêt (shapefile) et masquage des zones non pertinentes.
+    </li>
+    <li>
+      <strong>Détection de changement</strong> :
+      utilisation d’un indicateur de type log-ratio entre les dates, puis filtrage morphologique pour réduire le bruit.
+    </li>
+    <li>
+      <strong>Analyse et validation</strong> :
+      confrontation des cartes obtenues avec l’inspection visuelle des images « avant / après »
+      et interprétation des zones de perte de couvert forestier.
+    </li>
+  </ul>
+ </section>
+
+ <section class="section-card">
+  <h2>Intérêt opérationnel</h2>
+  <p>
+    Une telle chaîne de traitement permet de <strong>surveiller automatiquement l’évolution du couvert forestier</strong>
+    sur de grandes zones, sans dépendre uniquement des campagnes de terrain.
+  </p>
+  <p>
+    Pour une entreprise ou une institution, ce type d’outil offre :
+  </p>
+  <ul>
+    <li>
+      la <strong>détection rapide de coupes forestières</strong> (légales ou illégales) et des changements d’usage des sols.
+    </li>
+    <li>
+      un <strong>suivi objectif et régulier</strong> des concessions, aires protégées ou zones à enjeux environnementaux.
+    </li>
+    <li>
+      une <strong>aide à la planification des actions terrain</strong> en priorisant les zones suspectes identifiées par satellite.
+    </li>
+    <li>
+      des <strong>indicateurs quantifiables</strong> pour le reporting environnemental, les audits et les démarches de certification.
+    </li>
+  </ul>
+
+ </section>
+
+  <p class="back-link">
     <a href="Earth Obs. &amp; ML.html" class="btn">← Retour à Earth Obs. &amp; ML</a>
   </p>
-</main>
+   </main>
+   </div>
+ </div>
+</body>
+</html>

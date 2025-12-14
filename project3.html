@@ -3,25 +3,25 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Projet 3 — Analyse NDVI</title>
-  <link rel="stylesheet" type="text/css" href="style.css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,200&display=swap" rel="stylesheet"
-        type="text/css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" type="text/css" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" type="text/css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" type="text/css">
-    <meta name="viewport" content="width=device-width" />
-  <script defer src="js/JavaScript.js"></script>
-  </head>
+  <title>Projet 3 — Détection d’anomalies NDVI</title>
 
+  <link rel="stylesheet" type="text/css" href="style.css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,200&display=swap" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" type="text/css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" type="text/css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" type="text/css">
+  <script defer src="js/JavaScript.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Mono:ital,wght@1,200&display=swap"
+        rel="stylesheet" type="text/css">
+</head>
+
+<body>
   <div class="BG1">
     <div class="wrapper">
 
-      <body>
-
       <header>
         <div class="logo">
-          <a href="index.html"><img src="images/Logo.png" width="268pt" height="101pt"></img></a>
+          <a href="index.html"><img src="images/Logo.png" width="268" height="101" alt="AstroWeb Logo"></a>
         </div>
         <div class="Menu">
           <nav>
@@ -32,11 +32,12 @@
                   <li><a href="Planets.html#Mercure">Mercure</a></li>
                   <li><a href="Planets.html#Venus">Vénus</a></li>
                   <li><a href="Planets.html#Terre">Terre</a></li>
-                  <li><a href="Planets.html#Mercure">Mars</a></li>
+                  <li><a href="Planets.html#Mars">Mars</a></li>
                   <li><a href="Planets.html#Jupiter">Jupiter</a></li>
                   <li><a href="Planets.html#Saturne">Saturne</a></li>
                   <li><a href="Planets.html#Uranus">Uranus</a></li>
                   <li><a href="Planets.html#Neptune">Neptune</a></li>
+                  <li><a href="Planets.html#Exoplanets">Exoplanets</a></li>
                 </ul>
               </li>
 
@@ -49,9 +50,9 @@
                   <li><a href="Stars.html#Constellations">Constellations</a></li>
                   <li><a href="Stars.html#Pulsars">Pulsars</a></li>
                   <li><a href="Stars.html#Supernova">Supernova</a></li>
-
                 </ul>
               </li>
+
               <li>
                 <a href="Galaxy.html">Galaxy</a>
                 <ul class="submenu">
@@ -61,6 +62,7 @@
                   <li><a href="Galaxy.html#Quasars">Quasars</a></li>
                 </ul>
               </li>
+
               <li>
                 <a href="Earth Obs. & ML.html">Earth Obs. & ML</a>
                 <ul class="submenu">
@@ -71,214 +73,120 @@
                 </ul>
               </li>
             </ul>
-
           </nav>
-
         </div>
       </header>
-<main>
-  <h1>Détection d’inondations – Fusion Sentinel-1 &amp; Sentinel-2</h1>
 
-  <p><strong>Résumé :</strong>
-    Ce projet met en œuvre un pipeline complet de <strong>fusion de données radar (Sentinel-1)</strong>
-    et <strong>optique (Sentinel-2)</strong> pour détecter automatiquement les zones inondées.
-    Il combine <strong>prétraitement raster</strong>, <strong>analyse multispectrale</strong>
-    et <strong>machine learning</strong> (Random Forest) pour produire une carte d’inondation.
-  </p>
+      <main class="project-page">
+        <!-- TITRE & RÉSUMÉ -->
+        <section class="section-card section-card--highlight">
+          <h1>Détection d’anomalies NDVI – Stress hydrique &amp; sécheresse</h1>
+          <p class="subtitle">
+            Projet de <strong>détection de stress végétatif</strong> à partir de séries temporelles
+            <strong>NDVI</strong> (Sentinel-2), en utilisant des méthodes de
+            <strong>détection d’anomalies</strong> (z-score, IsolationForest).
+          </p>
+          <p>
+            L’objectif est d’identifier automatiquement les zones où la végétation présente un
+            <strong>comportement anormal</strong> par rapport à son cycle saisonnier habituel&nbsp;:
+            sécheresse, stress hydrique, dégradation.
+          </p>
+        </section>
 
-  <p><strong>Compétences démontrées :</strong>
-    prétraitement SAR &amp; optique (<em>rasterio, GDAL</em>), calcul d’indice NDWI, construction de
-    features fusionnées, entraînement d’un modèle de classification, génération et export
-    d’une <strong>carte d’inondation</strong> au format GeoTIFF.
-  </p>
+        <!-- OBJECTIF DU PROJET -->
+        <section class="section-card">
+          <h2>Objectif du projet</h2>
+          <p>
+            Construire un pipeline qui, à partir de séries temporelles NDVI, permet de&nbsp;:
+          </p>
+          <ul>
+            <li>modéliser le <strong>comportement saisonnier normal</strong> de la végétation ;</li>
+            <li>calculer un <strong>score d’anomalie</strong> pour chaque pixel et chaque date ;</li>
+            <li>produire une <strong>carte d’alerte</strong> mettant en évidence les zones en stress.</li>
+          </ul>
+          <p>
+            Ce type d’approche est particulièrement utile pour le suivi de <strong>sécheresse</strong>,
+            le monitoring agricole ou la surveillance d’écosystèmes sensibles.
+          </p>
+        </section>
 
-  <!-- SECTION OBJECTIF -->
-  <section>
-    <h2>Objectif du projet</h2>
-    <p>
-      L’objectif est d’identifier automatiquement les zones inondées à partir d’images
-      <strong>Sentinel-1 (SAR)</strong> et <strong>Sentinel-2 (optique)</strong>, en tirant parti
-      de la complémentarité des capteurs : le radar étant peu sensible à la couverture nuageuse,
-      et l’optique fournissant une information spectrale fine.
-    </p>
-  </section>
+        <!-- DONNÉES & PRÉTRAITEMENT -->
+        <section class="section-card">
+          <h2>Données &amp; prétraitement</h2>
+          <ul>
+            <li><strong>Capteur :</strong> Sentinel-2 (NIR &amp; Red) pour calcul du NDVI.</li>
+            <li><strong>Zone d’étude :</strong> région agricole / naturelle sur 1 à 2 ans.</li>
+            <li><strong>Fréquence temporelle :</strong> NDVI mensuel ou par passage filtré des nuages.</li>
+            <li><strong>Prétraitement :</strong> reprojection, masquage nuages/ombres, resampling éventuel.</li>
+          </ul>
 
-  <!-- SECTION DONNÉES -->
-  <section>
-    <h2>Données &amp; prétraitement</h2>
-    <ul>
-      <li><strong>Sentinel-1 SAR :</strong> bande VV, image calibrée et géoréférencée.</li>
-      <li><strong>Sentinel-2 :</strong> bandes B03 (Green) et B08 (NIR).</li>
-      <li><strong>Prétraitement :</strong> normalisation, alignement spatial, filtrage de base.</li>
-      <li><strong>Indice NDWI :</strong> calculé à partir des bandes Green &amp; NIR pour
-          améliorer la détection d’eau.</li>
-      <li><strong>Vérité terrain :</strong> masque binaire indiquant zones inondées / non inondées.</li>
-    </ul>
-  </section>
+          <div class="image-grid">
+            <figure>
+              <img src="images/NDVI - '2018-01-01', '2018-12-31'.png" alt="Carte NDVI année normale">
+              <figcaption>NDVI moyen sur une année '2020-01-01', '2020-12-31' en Aveyron (France).</figcaption>
+            </figure>
+            <figure>
+              <img src="images/NDVI - '2024-01-01', '2024-12-31'.png" alt="Carte NDVI année sèche">
+              <figcaption>NDVI moyen sur une année “sèche” '2024-01-01', '2024-12-31' en Aveyron (France).</figcaption>
+            </figure>
+          </div>
+        </section>
+        <!-- DÉTECTION D’ANOMALIES -->
+        <section class="section-card">
+          <h2>Détection d’anomalies</h2>
+          <p>
+            À partir du modèle “normal”, on calcule un <strong>score d’anomalie</strong> pour chaque pixel et chaque date&nbsp;:
+          </p>
+          <ul>
+            <li><strong>z-score</strong> : écart à la moyenne normalisé par l’écart-type.</li>
+            <li><strong>IsolationForest</strong> ou <strong>OneClassSVM</strong> pour détecter des pixels
+                dont le profil temporel diffère fortement de la majorité.</li>
+          </ul>
+          <p>
+            Les pixels avec un score d’anomalie élevé sont interprétés comme des <strong>zones en stress</strong> :
+            sécheresse locale, changement d’usage, dégradation.
+          </p>
 
-  <!-- SECTION PIPELINE -->
-  <section>
-    <h2>Pipeline de fusion &amp; machine learning</h2>
-    <ol>
-      <li>Chargement des rasters Sentinel-1 &amp; Sentinel-2 avec <code>rasterio</code>.</li>
-      <li>Normalisation des intensités (SAR &amp; optique).</li>
-      <li>Calcul du <strong>NDWI</strong> pour renforcer la signature de l’eau.</li>
-      <li>Empilement des features : <em>SAR VV, Green, NIR, NDWI</em>.</li>
-      <li>Échantillonnage des pixels et association aux labels (inondé / non inondé).</li>
-      <li>Entraînement d’un <strong>Random Forest</strong> pour la classification.</li>
-      <li>Prédiction d’une carte d’inondation et export en GeoTIFF.</li>
-    </ol>
-  </section>
+          <div class="image-grid">
+            <figure>
+              <img src="images/Anomalies.png" alt="Carte d’anomalies NDVI">
+              <figcaption>Carte d’anomalies NDVI : les zones en rouge présentent un stress végétatif anormal vis à vis de leur état en 2020 = preuve du réchauffement climatique.</figcaption>
+            </figure>
 
-  <!-- SECTION CODE : IMPORTS & SETUP -->
-  <section>
-    <h2>Extraits de code – Pipeline Python</h2>
+          </div>
+        </section>
 
-    <h3>Imports &amp; configuration</h3>
-    <pre><code>import rasterio
-import numpy as np
-from rasterio.plot import show
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import classification_report
-import matplotlib.pyplot as plt</code></pre>
+        <!-- STACK TECHNIQUE -->
+        <section class="section-card">
+          <h2>Skills</h2>
+          <ul>
+            <li><strong>Python scientifique :</strong> NumPy, Pandas, Matplotlib.</li>
+            <li><strong>Machine Learning :</strong> scikit-learn (IsolationForest, OneClassSVM).</li>
+            <li><strong>Analyse temporelle :</strong> séries NDVI, agrégation mensuelle, z-score, éventuellement STL.</li>
+            <li><strong>Cartographie :</strong> export GeoTIFF, visualisation dans QGIS et GEE.</li>
+          </ul>
+        </section>
 
-    <h3>Chargement des données Sentinel-1 &amp; Sentinel-2</h3>
-    <pre><code># Sentinel-1 SAR (VV)
-sar_path = "data/S1_VV.tif"
-with rasterio.open(sar_path) as src:
-    sar_vv = src.read(1)
-    profile = src.profile  # pour l'export GeoTIFF
+        <!-- INTÉRÊT OPÉRATIONNEL -->
+        <section class="section-card">
+          <h2>Intérêt opérationnel</h2>
+          <p>
+            Ce projet montre comment combiner <strong>données d’observation de la Terre</strong> et
+            <strong>méthodes de Machine Learning</strong> peut fournir des indicateurs essentielles à la
+            <strong>monitoring agricole</strong>, à la <strong>gestion de l'eau</strong> ou au suivi
+            d’écosystèmes. La chaîne développée peut être intégrée dans un service d’alerte ou de
+            cartographie régulière des zones en stress.
+          </p>
+        </section>
 
-# Sentinel-2 : bandes Green (B03) et NIR (B08)
-s2_green_path = "data/S2_B03.tif"
-s2_nir_path   = "data/S2_B08.tif"
-
-with rasterio.open(s2_green_path) as src:
-    s2_green = src.read(1)
-
-with rasterio.open(s2_nir_path) as src:
-    s2_nir = src.read(1)</code></pre>
-
-    <h3>Normalisation &amp; calcul du NDWI</h3>
-    <pre><code>def normalize(img):
-    img = img.astype("float32")
-    return (img - np.nanmin(img)) / (np.nanmax(img) - np.nanmin(img) + 1e-6)
-
-sar_vv_norm = normalize(sar_vv)
-green_norm  = normalize(s2_green)
-nir_norm    = normalize(s2_nir)
-
-# NDWI = (Green - NIR) / (Green + NIR)
-ndwi = (green_norm - nir_norm) / (green_norm + nir_norm + 1e-6)</code></pre>
-
-    <h3>Construction des features &amp; dataset</h3>
-    <pre><code># Empilement des features (H, W, 4)
-features = np.dstack([
-    sar_vv_norm,
-    green_norm,
-    nir_norm,
-    ndwi
-])
-
-# Chargement du masque de vérité terrain
-label_path = "data/flood_mask.tif"
-with rasterio.open(label_path) as src:
-    labels = src.read(1)
-
-# Mise en forme (X, y)
-X = features.reshape(-1, 4)
-y = labels.reshape(-1)
-
-# On enlève les pixels sans label (ex : -1)
-mask = (y &gt;= 0)
-X = X[mask]
-y = y[mask]</code></pre>
-
-    <h3>Entraînement du modèle &amp; évaluation</h3>
-    <pre><code>X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=42
-)
-
-model = RandomForestClassifier(
-    n_estimators=200,
-    max_depth=15,
-    n_jobs=-1
-)
-
-model.fit(X_train, y_train)
-y_pred = model.predict(X_test)
-
-print(classification_report(y_test, y_pred))</code></pre>
-
-    <h3>Génération de la carte d’inondation &amp; export GeoTIFF</h3>
-    <pre><code># Prédiction sur toute l'image
-pred_map = model.predict(features.reshape(-1, 4))
-pred_map = pred_map.reshape(sar_vv.shape)
-
-plt.figure(figsize=(10, 6))
-plt.title("Carte prédite d'inondation (Fusion SAR + Sentinel-2)")
-plt.imshow(pred_map, cmap="Blues")
-plt.colorbar()
-plt.show()
-
-# Export GeoTIFF
-out_profile = profile.copy()
-out_profile.update({
-    "count": 1,
-    "dtype": "uint8"
-})
-
-with rasterio.open("outputs/flood_pred.tif", "w", **out_profile) as dst:
-    dst.write(pred_map.astype("uint8"), 1)</code></pre>
-  </section>
-
-  <!-- SECTION RÉSULTATS -->
-  <section>
-    <h2>Résultats &amp; visualisation</h2>
-    <p>
-      Le modèle permet de générer une carte binaire des zones inondées à partir d’une
-      combinaison SAR + optique. La fusion des données améliore la robustesse de la
-      détection, notamment en présence de nuages ou de variations d’illumination.
-    </p>
-
-    <div class="image-grid">
-      <figure>
-        <img src="images/flood_input_example.jpg"
-             alt="Composite Sentinel-1 / Sentinel-2"
-             style="max-width:100%;border-radius:8px;">
-        <figcaption>Composite Sentinel-1 / Sentinel-2 utilisé en entrée.</figcaption>
-      </figure>
-
-      <figure>
-        <img src="images/flood_output_example.jpg"
-             alt="Carte d'inondation prédite"
-             style="max-width:100%;border-radius:8px;">
-        <figcaption>Carte d’inondation prédite par le modèle.</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- SECTION STACK TECHNIQUE -->
-  <section>
-    <h2>Stack technique</h2>
-    <ul>
-      <li><strong>Python scientifique :</strong> NumPy, Matplotlib</li>
-      <li><strong>Traitement d’images :</strong> rasterio, GDAL</li>
-      <li><strong>Machine learning :</strong> scikit-learn (RandomForest)</li>
-      <li><strong>Formats &amp; géoréférencement :</strong> GeoTIFF, profils raster</li>
-    </ul>
-  </section>
-
-  <p><a href="Earth Obs. &amp; ML.html" class="btn">← Retour à Earth Obs. &amp; ML</a></p>
-</main>
+        <p class="back-link">
+          <a href="Earth Obs. &amp; ML.html" class="btn">← Retour à Earth Obs. &amp; ML</a>
+        </p>
+      </main>
 
       <footer>&copy; Pierre BAUDU 2021</footer>
+
     </div>
   </div>
 </body>
 </html>
-          </nav>
-
-        </div>
-      </header>

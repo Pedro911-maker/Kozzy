@@ -7,6 +7,12 @@
     <title>AstroWeb</title>
     <link rel="stylesheet" type="text/css" href="style.css/style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,200&display=swap" rel="stylesheet"
+        type="text/css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" type="text/css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" type="text/css">
+    <meta name="viewport" content="width=device-width" />
     <script defer src="js/JavaScript.js"></script>
     <meta name="viewport" content="width=device-width" />
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Mono:ital,wght@1,200&display=swap"
@@ -64,16 +70,15 @@
                             <li>
                                 <a href="Earth Obs. & ML.html">Earth Obs. & ML</a>
                                 <ul class="submenu">
-                                    <li><a href="Earth Obs. & ML.html#Overview">Overview</a></li>
-                                    <li><a href="Earth Obs. & ML.html#Satellite">Satellite Technology</a></li>
-                                    <li><a href="Earth Obs. & ML.html#Machine Learning">Machine Learning</a></li>
-                                    <li><a href="Earth Obs. & ML.html#Applications">Applications</a></li>
+                                    <li><a href="project1.html">ML  </a></li>
+                                    <li><a href="project2.html">EO </a></li>
+                                    <li><a href="project3.html">EO + ML</a></li>
                                 </ul>
                             </header>
 
                             <main>
                                 <section id="eo-ml" class="projects">
-                                    <h2>🛰️ Earth Observation & Machine Learning</h2>
+                                    <strong><h2>🛰️ Earth Observation & Machine Learning 🛰️</h2> </strong>
                                     <p class="subtitle">
                                         Projets appliquant Computer Vision & Deep Learning aux données d’observation de la Terre.
                                         Actuellement en recherche d’un stage en Image Processing / Computer Vision.
@@ -82,48 +87,47 @@
                                     <div class="project-grid">
 
                                         <div class="project-card">
-                                            <img src="images/Best/Nébuleuse-Papillon.jpg" alt="Sentinel-2 Segmentation">
-                                            <h3>Classification Multispectrale – Sentinel-2</h3>
+                                            <img src="images/titanic.png" alt="Machine Learning" height = 50px >
+                                            <h3>Machine Learning Prédiction</h3>
                                             <p>
-                                                Segmentation de l’occupation du sol à partir d’images Sentinel-2.
-                                                <br><strong>Techniques :</strong> preprocessing raster, CNN (U-Net), IoU/F1.
-                                                <br><strong>Résultat :</strong> 85% d’accuracy.
+                                                Algorithme de prédiction de survie<br> sur le Titanic.
+                                                <br>
+                                                <br>Techniques : prétraitement des données <br>linear regression <br> random forest.
+                                                <br>
+                                                <br>Résultat:0.86(+/-0.054)% accuracy.
                                             </p>
                                             <a href="project1.html" class="btn">Voir le projet</a>
                                         </div>
 
                                         <div class="project-card">
-                                            <img src="images/Best/Aurore-Boréale.jpg" alt="Sentinel-1 SAR change detection">
-                                            <h3>Détection de changement – Sentinel-1 (SAR)</h3>
+                                            <img src="images/Deforestation.avif" alt="Sentinel-1 SAR change detection">
+                                            <h3>Détection de changement Spot 7</h3>
                                             <p>
-                                                Détection automatique d’inondations à partir d’images SAR.
-                                                <br><strong>Techniques :</strong> filtrage speckle, différence cohérente, clustering.
-                                                <br><strong>Résultat :</strong> extraction fiable des zones impactées.
+                                                Monitoring de la déforestation via <br> SPOT 7 Optical Imagery.
+                                                <br>
+                                                <br>Tree Layer Classification <br> Change Detection.
+                                                <br>
+                                                <br>Cartes de changement précises.
+                                                
                                             </p>
                                             <a href="project2.html" class="btn">Voir le projet</a>
                                         </div>
 
                                         <div class="project-card">
                                             <img src="images/Best/Nébuleuse-Crabe.jpg" alt="NDVI Time Series">
-                                            <h3>Analyse NDVI – Séries temporelles</h3>
+                                            <h3>Détection anomalies vegetation</h3>
                                             <p>
-                                                Suivi de la végétation sur plusieurs mois.
-                                                <br><strong>Techniques :</strong> NDVI/NDWI, STL, détection d’anomalies.
-                                                <br><strong>Résultat :</strong> identification des zones en stress hydrique.
+                                                Suivi de la végétation et détection <br>
+                                                de stress hydrique à partir de séries<br> temporelles NDVI 
+                                                Sentinel-2.
+                                                <br>
+                                                <br><strong></strong> NDVI/NDWI, STL, détection d’anomalies.
+                                                <br><strong></strong> identification des zones en stress <br>
+                                                hydrique.
                                             </p>
                                             <a href="project3.html" class="btn">Voir le projet</a>
                                         </div>
 
-                                    </div>
-
-                                    <div class="skills">
-                                        <h3>Compétences associées</h3>
-                                        <ul>
-                                            <li>Python, NumPy, PyTorch, OpenCV</li>
-                                            <li>Traitement d’images multispectrales (Sentinel-2) & SAR (Sentinel-1)</li>
-                                            <li>GDAL, rasterio, QGIS</li>
-                                            <li>Classification, segmentation, séries temporelles</li>
-                                        </ul>
                                     </div>
                                 </section>
                             </main>
@@ -132,70 +136,6 @@
                                 &copy; Pierre BAUDU 2021
                             </footer>
 
-                        </div>
-                    </div>
-
-
-                The effect is cataclysmic, the layers of gas then "bounce" on the core.<br><br> The energy released by
-                the
-                layers
-                falling towards the center, produces a shock wave that "blows" the outer layers of the star, this is
-                called
-                a
-                supernova explosion.<br>
-                The gaseous envelope that will be projected into space will release a considerable energy, as much
-                energy as
-                the
-                Sun for billions of years. This terrible explosion, which projects the upper layers of the star into
-                space,
-                will
-                be visible throughout the galaxy. Then a supernova will spread, over hundreds of billions of km, seeding
-                the
-                interstellar medium with heavy elements, manufactured during the life of the star and during the
-                explosion.<br>
-                These heavy elements are the constituents of the telluric planets, like our Earth and also the
-                constituents
-                of
-                our body and of all the objects which surround us.
-                The supernova of Tycho called SN 1572, is a nova that appeared in the constellation of Cassiopeia in
-                1572.<br>
-                It
-                was visible to the naked eye and observed by Tycho Brahe on November 11, 1572, then brighter than the
-                planet
-                Venus.<br><br> Tycho Brahe noticed that the position of the object did not move in relation to the fixed
-                stars,
-                like
-                the
-                planets. He deduced that it was not a planet, but a star. In March 1574, it disappeared below the
-                visibility
-                threshold.<br> This superb image from the Chandra X-Ray Space Telescope is one of the most important
-                images
-                ever
-                produced with an observatory in Earth orbit. It is as well known as the Crab Nebula supernova. The Crab
-                Nebula
-                (M1 or NGC 1952) is the result of the explosion of the supernova SN 1054 observed from July 1054 to
-                April
-                1056
-                by a Chinese astronomer.<br> In 1758 Charles Messier discovered it and made it the first object in his
-                catalog
-                (M1
-                in the Messier catalog).<br><br>
-                Supernovas are indeed explosions of extremely luminous stars, so luminous that they are remarkable among
-                the
-                bright stars of a galaxy.
-
-            </i>
-
-
-
-
-            <!--<div class="gallery" id="gallery"></div>-->
             </body>
-
-
-            <footer>
-                &copy; Pierre BAUDU 2021
-            </footer>
-
         </div>
     </div>

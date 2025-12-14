@@ -168,3 +168,4 @@ fetch('./js/img.json') // link with the json
   
 
   });
+

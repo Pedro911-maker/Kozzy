@@ -3,25 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Projet 1 — Classification Multispectrale</title>
-  <link rel="stylesheet" type="text/css" href="style.css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,200&display=swap" rel="stylesheet"
-        type="text/css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" type="text/css" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" type="text/css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" type="text/css">
-    <meta name="viewport" content="width=device-width" />
   <script defer src="js/JavaScript.js"></script>
-  </head>
-
-  <div class="BG1">
-    <div class="wrapper">
-
-      <body>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Mono:ital,wght@1,200&display=swap"
+    rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="style.css/style.css" />
+</head>
+<body>
+    <div class="BG3">
+        <div class="wrapper">
 
       <header>
         <div class="logo">
-          <a href="index.html"><img src="images/Logo.png" width="268pt" height="101pt"></img></a>
+          <a href="index.html"><img src="images/Logo.png" width="268" height="101" alt="AstroWeb Logo"></a>
         </div>
         <div class="Menu">
           <nav>
@@ -32,11 +25,12 @@
                   <li><a href="Planets.html#Mercure">Mercure</a></li>
                   <li><a href="Planets.html#Venus">Vénus</a></li>
                   <li><a href="Planets.html#Terre">Terre</a></li>
-                  <li><a href="Planets.html#Mercure">Mars</a></li>
+                  <li><a href="Planets.html#Mars">Mars</a></li>
                   <li><a href="Planets.html#Jupiter">Jupiter</a></li>
                   <li><a href="Planets.html#Saturne">Saturne</a></li>
                   <li><a href="Planets.html#Uranus">Uranus</a></li>
                   <li><a href="Planets.html#Neptune">Neptune</a></li>
+                  <li><a href="Planets.html#Exoplanets">Exoplanets</a></li>
                 </ul>
               </li>
 
@@ -49,9 +43,9 @@
                   <li><a href="Stars.html#Constellations">Constellations</a></li>
                   <li><a href="Stars.html#Pulsars">Pulsars</a></li>
                   <li><a href="Stars.html#Supernova">Supernova</a></li>
-
                 </ul>
               </li>
+
               <li>
                 <a href="Galaxy.html">Galaxy</a>
                 <ul class="submenu">
@@ -60,133 +54,257 @@
                   <li><a href="Galaxy.html#Black Hole">Black Hole</a></li>
                   <li><a href="Galaxy.html#Quasars">Quasars</a></li>
                 </ul>
-              </li>
-              <li>
-                <a href="Earth Obs. & ML.html">Earth Obs. & ML</a>
+
+                </li>
+                <li>
+                 <a href="Earth Obs. & ML.html">Earth Obs. & ML</a>
                 <ul class="submenu">
-                  <li><a href="Earth Obs. & ML.html#Overview">Overview</a></li>
-                  <li><a href="Earth Obs. & ML.html#Satellite">Satellite Technology</a></li>
-                  <li><a href="Earth Obs. & ML.html#Machine Learning">Machine Learning</a></li>
-                  <li><a href="Earth Obs. & ML.html#Applications">Applications</a></li>
+                  <li><a href="project1.html">ML  </a></li>
+                  <li><a href="project2.html">EO </a></li>
+                  <li><a href="project3.html">EO + ML</a></li>
                 </ul>
               </li>
             </ul>
-
           </nav>
-
         </div>
       </header>
-<main>
-    <h1>Segmentation Sémantique – U-Net sur Images Satellite</h1>
 
-    <p><strong>Résumé :</strong> 
-      Ce projet met en œuvre un modèle <strong>U-Net</strong> pour réaliser la 
-      <strong>segmentation sémantique</strong> d’images Sentinel-2. 
-      L’objectif est d’identifier automatiquement différentes classes d’occupation 
-      du sol (zones urbaines, végétation, eau) à partir de données multispectrales.
-    </p>
+      <main class="project-page">
 
-    <p><strong>Compétences démontrées :</strong> 
-      prétraitement raster (<em>rasterio, GDAL</em>), extraction multispectrale 
-      (RGB/NIR/SWIR), création de patches d’apprentissage, entraînement d’un 
-      <strong>CNN U-Net</strong> sous <strong>PyTorch</strong>, métriques IoU/F1.
-    </p>
+        <!-- CARD TITRE -->
+        
+      <section class="section-card" id="titanic-predictor">
+        <h2>Tester le modèle : prédire la survie d’un passager</h2>
+            <p>
+              Choisis les caractéristiques d’un passager pour estimer sa probabilité de survie
+              selon le modèle entraîné sur le jeu de données Titanic.
+            </p>
 
-    <section>
-      <h2>Données</h2>
-      <ul>
-        <li><strong>Source :</strong> Sentinel-2 L2A (Copernicus)</li>
-        <li><strong>Bands utilisées :</strong> B2, B3, B4, B8 (visible & NIR), B11/B12 (SWIR)</li>
-        <li><strong>Résolution :</strong> 10–20 m</li>
-        <li><strong>Prétraitement :</strong> reprojection, normalisation, cloud masking, 
-            extraction de patches 128×128</li>
-      </ul>
-    </section>
+            <form id="titanic-form" class="titanic-form" action="#" onsubmit="return false;">
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="pclass">Classe</label>
+                  <select id="pclass" name="pclass">
+                    <option value="1">1ère classe</option>
+                    <option value="2">2ème classe</option>
+                    <option value="3" selected>3ème classe</option>
+                  </select>
+                </div>
 
-    <section>
-      <h2>Méthodologie</h2>
-      <ul>
-        <li>
-          <strong>Prétraitement :</strong> ouverture des bandes Sentinel-2 avec <em>rasterio</em>, 
-          stacking multispectral, harmonisation des résolutions, 
-          calcul d’indices (NDVI/NDWI).
-        </li>
-        <li>
-          <strong>Dataset :</strong> génération de milliers de patches multispectraux et 
-          extraction des masques d’occupation du sol (open-source / OSM / Inria).
-        </li>
-        <li>
-          <strong>Modèle :</strong> architecture <strong>U-Net</strong> avec encodeur 
-          type <em>ResNet-34</em>.
-        </li>
-        <li>
-          <strong>Entraînement :</strong> PyTorch, augmentation géospatiale 
-          (rotation, flip, brightness), fonction de perte <em>Dice + BCE</em>.
-        </li>
-        <li>
-          <strong>Évaluation :</strong> IoU par classe, F1-score, matrice de confusion.
-        </li>
-      </ul>
-    </section>
+                <div class="form-field">
+                  <label for="sex">Sexe</label>
+                  <select id="sex" name="sex">
+                    <option value="male">Homme</option>
+                    <option value="female">Femme</option>
+                  </select>
+                </div>
 
-    <section>
-      <h2>Résultats</h2>
-      <p>
-        Le modèle atteint une <strong>IoU moyenne de XX%</strong> sur le jeu de test.  
-        La segmentation permet de distinguer efficacement zones urbaines, végétation 
-        dense et surfaces d’eau.
-      </p>
+                <div class="form-field">
+                  <label for="age">Âge</label>
+                  <input type="number" id="age" name="age" min="0" max="100" step="1" placeholder="Ex : 29">
+                </div>
+              </div>
 
-      <div class="image-grid">
-        <figure>
-          <img src="images/input_example.jpg" 
-               alt="Image satellite brute" 
-               style="max-width:100%;border-radius:8px;">
-          <figcaption>Image multispectrale d’entrée</figcaption>
-        </figure>
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="sibsp">Frères / sœurs / conjoint à bord (SibSp)</label>
+                  <input type="number" id="sibsp" name="sibsp" min="0" max="10" step="1" placeholder="Ex : 1">
+                </div>
 
-        <figure>
-          <img src="images/output_unet.jpg" 
-               alt="Segmentation U-Net" 
-               style="max-width:100%;border-radius:8px;">
-          <figcaption>Résultat de la segmentation (U-Net)</figcaption>
-        </figure>
-      </div>
-    </section>
+                <div class="form-field">
+                  <label for="parch">Parents / enfants à bord (Parch)</label>
+                  <input type="number" id="parch" name="parch" min="0" max="10" step="1" placeholder="Ex : 0">
+                </div>
 
-    <section>
-      <h2>Technologies utilisées</h2>
-      <ul>
-        <li><strong>Python scientifique :</strong> NumPy, Pandas, Matplotlib</li>
-        <li><strong>Traitement d’images :</strong> rasterio, GDAL</li>
-        <li><strong>Machine Learning :</strong> PyTorch, TensorFlow</li>
-        <li><strong>Analyse géospatiale :</strong> geopandas, QGIS</li>
-      </ul>
-    </section>
+                <div class="form-field">
+                  <label for="fare">Tarif du billet (£)</label>
+                  <input type="number" id="fare" name="fare" min="0" step="0.1" placeholder="Ex : 35.5">
+                </div>
+              </div>
 
-    <section>
-      <h2>Ce que ce projet démontre</h2>
-      <p>
-        Ce projet illustre ma capacité à développer un pipeline complet de 
-        <strong>vision par ordinateur appliquée à l’observation de la Terre</strong>, 
-        depuis la préparation des données brutes Sentinel-2 jusqu’à la mise en production 
-        d’un modèle de segmentation <strong>U-Net</strong>.  
-        Il met également en valeur mes compétences en <strong>traitement d’images</strong>, 
-        <strong>machine learning</strong> et <strong>exploitation de données multispectrales</strong>, 
-        telles que décrites dans mon CV.
-      </p>
-    </section>
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="embarked">Port d’embarquement</label>
+                  <select id="embarked" name="embarked">
+                    <option value="S">Southampton (S)</option>
+                    <option value="C">Cherbourg (C)</option>
+                    <option value="Q">Queenstown (Q)</option>
+                  </select>
+                </div>
+              </div>
 
-    <p><a href="Earth Obs. & ML.html" class="btn">← Retour à Earth Obs. & ML</a></p>
-</main>
+              <button type="button" class="btn" id="predict-btn">
+                Prédire la survie
+              </button>
+            </form>
 
-      <footer>&copy; Pierre BAUDU 2021</footer>
+            <div id="titanic-result" class="prediction-result">
+              <p>Résultat de la prédiction : <em>en attente de saisie</em>.</p>
+            </div>
+          </section>
+
+
+          <script>
+          (function () {
+            console.log("Titanic predictor script loaded");
+
+            // --- Encodage des variables catégorielles ---
+            function encodeSex(sex) {
+              const s = (sex || "").toLowerCase().trim();
+              if (s === "female" || s === "f" || s === "femme") return 0;
+              if (s === "male"   || s === "m" || s === "homme") return 1;
+              return 1; // défaut : homme
+            }
+
+            function encodeEmbarked(port) {
+              const p = (port || "").toUpperCase().trim();
+              // Mapping type LabelEncoder(['C', 'Q', 'S']) -> [0, 1, 2]
+              if (p === "C") return 0;
+              if (p === "Q") return 1;
+              if (p === "S") return 2;
+              return 2; // défaut : S
+            }
+
+            // --- Paramètres du scaler + modèle (exemple cohérent) ---
+            const TITANIC_MEANS = [
+              2.29,  // Pclass
+              0.64,  // Sex
+              29.26, // Age
+              0.50,  // SibSp
+              0.39,  // Parch
+              33.28, // Fare
+              1.49,  // Embarked
+              1.88,  // FamilySize
+              0.60   // IsAlone
+            ];
+
+            const TITANIC_SCALES = [
+              0.84,  // Pclass
+              0.48,  // Sex
+              13.21, // Age
+              1.04,  // SibSp
+              0.87,  // Parch
+              51.72, // Fare
+              0.81,  // Embarked
+              1.58,  // FamilySize
+              0.49   // IsAlone
+            ];
+
+            const TITANIC_COEF = [
+              -0.84,  // Pclass
+              -1.73,  // Sex
+              -0.49,  // Age
+              -0.41,  // SibSp
+              0.01,   // Parch
+              0.03,   // Fare
+              0.00,   // Embarked
+              -0.27,  // FamilySize
+              -0.30   // IsAlone
+            ];
+
+            const TITANIC_INTERCEPT = -0.73;
+
+            function predictTitanicSurvival(input) {
+              const pclass   = Number(input.pclass);
+              const sexEnc   = encodeSex(input.sex);
+              const age      = Number(input.age);
+              const sibsp    = Number(input.sibsp);
+              const parch    = Number(input.parch);
+              const fare     = Number(input.fare);
+              const embEnc   = encodeEmbarked(input.embarked);
+
+              const familySize = sibsp + parch + 1;
+              const isAlone    = (familySize === 1) ? 1 : 0;
+
+              const features = [
+                pclass,
+                sexEnc,
+                age,
+                sibsp,
+                parch,
+                fare,
+                embEnc,
+                familySize,
+                isAlone
+              ];
+
+              // Standardisation
+              const scaled = features.map(function (v, i) {
+                return (v - TITANIC_MEANS[i]) / TITANIC_SCALES[i];
+              });
+
+              // Logit = w.x + b
+              var z = TITANIC_INTERCEPT;
+              for (var i = 0; i < scaled.length; i++) {
+                z += scaled[i] * TITANIC_COEF[i];
+              }
+
+              const proba = 1 / (1 + Math.exp(-z));
+              const survived = proba >= 0.5;
+
+              return { proba: proba, survived: survived };
+            }
+
+            // --- Raccord avec le formulaire ---
+            const btn = document.getElementById("predict-btn");
+            const resultDiv = document.getElementById("titanic-result");
+
+            if (!btn || !resultDiv) {
+              console.warn("Titanic form elements not found");
+              return;
+            }
+
+            btn.addEventListener("click", function () {
+              const pclass   = document.getElementById("pclass").value;
+              const sex      = document.getElementById("sex").value;
+              const ageVal   = document.getElementById("age").value;
+              const sibspVal = document.getElementById("sibsp").value;
+              const parchVal = document.getElementById("parch").value;
+              const fareVal  = document.getElementById("fare").value;
+              const embarked = document.getElementById("embarked").value;
+
+              const input = {
+                pclass:   pclass   || 3,
+                sex:      sex      || "male",
+                age:      ageVal   || 30,
+                sibsp:    sibspVal || 0,
+                parch:    parchVal || 0,
+                fare:     fareVal  || 30,
+                embarked: embarked || "S"
+              };
+
+              const prediction = predictTitanicSurvival(input);
+              const probaPct = (prediction.proba * 100).toFixed(1);
+
+              resultDiv.innerHTML = `
+                <div class="section-card">
+                  <h3>Résultat de la prédiction</h3>
+                  <p>Probabilité de survie estimée&nbsp;: 
+                    <strong>${probaPct}%</strong>
+                  </p>
+                  <p>
+                    Selon le modèle, ce passager 
+                    <strong style="color:${prediction.survived ? '#4caf50' : '#e53935'};">
+                      ${prediction.survived ? 'aurait survécu.' : 'n’aurait probablement pas survécu.'}
+                    </strong>
+                  </p>
+                  <p class="subtitle">
+                    Modèle type régression logistique, inspiré de mon entraînement Python sur le dataset Titanic,
+                    avec normalisation des variables et features dérivées (FamilySize, IsAlone).
+                  </p>
+                </div>
+              `;
+            });
+          })();
+          </script>
+
+      </main>
+
+      <footer>
+        <p>© 2021 AstroWeb. Tous droits réservés.</p>
+      </footer>
+
     </div>
-  </div>
+  </div>  
 </body>
 </html>
-          </nav>
-
-        </div>
-      </header>
-
