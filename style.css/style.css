@@ -375,7 +375,7 @@ footer{
 h2{
   color: whitesmoke;
   text-align:center;
-  width : 650px;
+  width : 950px;
   line-height: 40px;
   padding-left:300px;
   height : 80px;
@@ -581,13 +581,16 @@ h1.Intro{
   height: 120px;
   line-height: 50px;
   margin: 0px;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.749);
 }
 i{
   padding-left :20px;
  color:wheat;
+ text-shadow: 0 0 8px rgba(0, 0, 0, 0.749);
 }
 p a {
   text-align: right;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.749);
 }
 
 
@@ -602,12 +605,14 @@ p a {
 .projects {
   padding: 40px 30px;
   color: #fff;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.749);
 }
 .projects .subtitle {
   max-width: 900px;
   margin: 0 auto 24px auto;
   color: #ddd;
   text-align: center;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.749);
 }
 .project-grid {
   display: grid;
@@ -619,11 +624,12 @@ p a {
   background: rgba(255,255,255,0.03);
   border-radius: 10px;
   padding: 14px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.749);
   text-align: left;
   position: relative;
   overflow: hidden;
   min-height: 320px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
 }
 .project-card img {
   width: 100%;
@@ -639,9 +645,10 @@ p a {
   display: inline-block;
   margin-top: 10px;
   padding: 8px 12px;
-  background: rgba(70,130,180,0.95);
+  background: rgba(0, 0, 0, 0.475);
   color: #fff;
   text-decoration: none;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.749);
   border-radius: 6px;
 }
 .skills { margin-top: 26px; text-align: left; }
@@ -670,6 +677,7 @@ p a {
   font-size: 18px;
   line-height: 1.6;
   color: #e0e0e0;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.749);
 }
 
 /* Encadrés de section */
@@ -681,6 +689,7 @@ p a {
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 14px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.749);
 }
 
 /* Titres à l’intérieur des encadrés */
@@ -690,6 +699,7 @@ p a {
   text-align: left;
   margin-top: 0;
   margin-bottom: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
   font-size: 24px;
 }
 
@@ -699,6 +709,7 @@ p a {
   width: 100%;
   padding-left: 0;
   text-align: left;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.749);
   line-height: 1.7;
   font-size: 16px;
 }
@@ -715,6 +726,7 @@ p a {
   flex-wrap: wrap;
   gap: 16px;
   margin-top: 12px;
+
 }
 
 .image-grid figure {
@@ -723,6 +735,7 @@ p a {
   border-radius: 10px;
   padding: 10px;
   text-align: center;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.749);
 }
 
 .image-grid img {
@@ -735,6 +748,7 @@ p a {
   margin-top: 8px;
   font-size: 14px;
   color: #ddd;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.749);
 }
 
 /* Lien de retour centré mais discret */
@@ -748,6 +762,7 @@ p a {
 
 .project-page {
   color: #ffffff;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.749);
 }
 
 .project-page h1,
@@ -762,12 +777,14 @@ p a {
 .project-page i,
 .project-page .subtitle {
   color: #ffffff !important;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.749);
 }
 /* ====== PAGE PROJET 2 : MONITORING FORESTIER ====== */
 
 .project-page {
   padding: 32px 40px 60px;
-  color: #ffffff;              /* texte blanc par défaut */
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.749);           /* texte blanc par défaut */
 }
 
 .project-page h1,
