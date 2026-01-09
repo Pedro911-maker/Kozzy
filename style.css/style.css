@@ -663,6 +663,7 @@ footer {
 @media (min-width: 1024px) {
   header {
     height: 120px;
+    transform :translateY(-20px);
   }
   
   .logo img {
