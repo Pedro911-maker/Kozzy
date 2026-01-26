@@ -1,4 +1,4 @@
-## Hi there 👋
+Hello, I'm Pierre 🔭🌱
 
 <img width="500" height="500" alt="image-gen" src="https://github.com/user-attachments/assets/50bcd41f-9778-4606-8c83-ef39ff19c84b" />
 
