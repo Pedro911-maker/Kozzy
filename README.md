@@ -1,5 +1,7 @@
 ## Hello, I'm Pierre 🌱
-Welcome to my Github profile!   I'm a passionate earth observation data scientist with a love for building innovative solutions for the planet and exploring this beautiful world throught new technologies.
+Welcome to my Github profile!   
+
+I'm a passionate earth observation data scientist with a love for building innovative solutions for the planet and exploring this beautiful world throught new technologies.
 <img width="500" height="500" alt="image-gen" src="https://github.com/user-attachments/assets/50bcd41f-9778-4606-8c83-ef39ff19c84b" />
 
 
