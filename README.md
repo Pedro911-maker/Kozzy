@@ -1,7 +1,8 @@
 ## Hi there 👋
 
-<!--
-**Pedro911-maker/Pedro911-maker** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+<img width="1024" height="1024" alt="image-gen" src="https://github.com/user-attachments/assets/50bcd41f-9778-4606-8c83-ef39ff19c84b" />
+
+
 
 Here are some ideas to get you started:
 
