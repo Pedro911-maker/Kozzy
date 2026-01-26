@@ -11,7 +11,7 @@
   
 🌱 I’m currently learning image processing via machine & deep learning at ISAE SUPAERO Advanced Mastere SPAPS (Space Applications & Services)  
 🤔 I’m looking for help with my 4-6 month internship starting in April  
-💬 Ask me about anything !  
-📫 How to reach me: pierrebaudu14@gmail.com or on my steam "Kozzy" ^^  
+📫 How to reach me: pierrebaudu14@gmail.com
 😄 Pronouns: he/him  
+💬 Ask me about anything !  
 
