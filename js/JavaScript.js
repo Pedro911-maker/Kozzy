@@ -203,3 +203,38 @@ const progressObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.progress-fill').forEach(bar => {
     progressObserver.observe(bar);
 });
+
+// Liste des images à afficher
+const images = [
+    { src: 'images/Best/Aurore-Boréal-Jupiter.jpg', alt: 'Aurore Boréale sur Jupiter' },
+    { src: 'images/Best/Aurore-Boréale.jpg', alt: 'Aurore Boréale' },
+    { src: 'images/Best/Epee-Orion.jpg', alt: 'Épée d\'Orion' },
+    { src: 'images/Best/Fun.png', alt: 'Fun' },
+    { src: 'images/Best/Nébuleuse-Cheval.jpg', alt: 'Nébuleuse de la Tête de Cheval' },
+    { src: 'images/Best/Nébuleuse-Crabe.jpg', alt: 'Nébuleuse du Crabe' },
+    { src: 'images/Best/Nébuleuse-Hélice.jpg', alt: 'Nébuleuse de l\'Hélice' },
+    { src: 'images/Best/Nébuleuse-Papillon.jpg', alt: 'Nébuleuse du Papillon' },
+    { src: 'images/Best/Triangulum Galaxy.jpg', alt: 'Galaxie du Triangle' }
+];
+
+// Sélectionner l'élément gallery
+const gallery = document.getElementById('gallery');
+
+// Créer et ajouter chaque image à la galerie
+images.forEach(image => {
+    // Créer un conteneur pour l'image (optionnel, pour mieux styliser)
+    const imgContainer = document.createElement('div');
+    imgContainer.className = 'gallery-item';
+    
+    // Créer l'élément image
+    const img = document.createElement('img');
+    img.src = image.src;
+    img.alt = image.alt;
+    img.loading = 'lazy'; // Chargement différé pour de meilleures performances
+    
+    // Ajouter l'image au conteneur
+    imgContainer.appendChild(img);
+    
+    // Ajouter le conteneur à la galerie
+    gallery.appendChild(imgContainer);
+});
