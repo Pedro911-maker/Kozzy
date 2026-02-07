@@ -287,8 +287,8 @@ img {
 }
 
 .gallery-item img {
-  width: 100%;
-  height: auto;
+  width: 400px;
+  height: 400px;
   transform: scale(1);
   transition: 0.3s ease-in-out;
 }
@@ -888,7 +888,7 @@ body {
 
 /* About Section */
 .about-section {
-    background-color: var(--bg-secondary);
+    background-color:rgb(31,31,31);
     padding: 100px 0;
 }
 
@@ -917,7 +917,7 @@ body {
 }
 
 .about-image img {
-    width: 60%;
+    width: 80%;
     margin-left: 50px;
 }
 
