@@ -15,7 +15,7 @@ I'm a passionate earth observation data scientist with a love for building innov
   
 🌱 I’m currently learning image processing via machine & deep learning at ISAE SUPAERO Advanced Mastere SPAPS (Space Applications & Services)  
 🤔 I’m looking for help with my 4-6 month internship in this field, starting in April  
-📫 How to reach me: pierrebaudu14@gmail.com, https://www.linkedin.com/in/pierre-baudu-8b81071ab/
+📫 How to reach me: [[pierrebaudu14@gmail.com, https://www.linkedin.com/in/pierre-baudu-8b81071ab/](https://pedro911-maker.github.io/Kozzy/)](https://pedro911-maker.github.io/Kozzy/)
 😄 Pronouns: he/him  
 💬 Ask me about anything !  
 
